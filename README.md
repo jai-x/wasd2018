@@ -1,10 +1,10 @@
 # wasd2018
 
 A bundle of broadcast graphics for 
-[Warwick's Awesom Speedruns & Demos](https://uwcs.co.uk/events/wasd-2018) to be
+[Warwick's Awesome Speedruns & Demos](https://uwcs.co.uk/events/wasd-2018) to be
 used with [nodecg](https://nodecg.com).
 
-###Currently in development
+### Currently in development
 
 This bundle is built on the [nodecg](https://nodecg.com) broadcast graphics
 framework, under the MIT license.
@@ -16,7 +16,7 @@ The dashboard uses [Simple line icons](http://simplelineicons.com) to provide CS
 based icons in the user interface, under the MIT license.
 
 The broadcast graphics use the [anime.js](http://animejs.com) JavaScript animation
-engine for animation on screen elements, under the MIT license.
+engine for animating on screen elements, under the MIT license.
 
 This bundle uses [livesplit-core](https://github.com/LiveSplit/livesplit-core)
 timing library, under the MIT license.
