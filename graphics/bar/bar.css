@@ -1,157 +1,56 @@
-@font-face {
-	font-family: "Montserrat";
-	font-weight: 400;
-	font-style: normal;
-	src: local("Montserrat"),
-		url("../Montserrat-Regular.ttf");
-}
-
-* {
-	box-sizing: border-box;
-}
-
-body {
-	margin: 0;
-	font-family: "Montserrat";
-	letter-spacing: normal;
-	color: white;
-
-	/* dev only 
-	background-color: lime; */
-}
-
-span {
-	display: inline-block;
-}
-
-.flex-row {
+#bar {
+	background-color: var(--uwcs-dark-grey);
 	display: flex;
-	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	overflow: hidden;
+}
+
+#bar > div {
+	height: 100%;
+	position: relative;
+	display: flex;
 	align-items: center;
 }
 
-#bar {
-	justify-content: space-between;
-	height: 72px;
-	width: 1280px;
-	background-color: #222528;
-	z-index: -999;
-	overflow: hidden;
-	border-bottom: 2px solid yellow;
-
-	/* dev only 
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	margin: auto;
-	overflow: visible; */
-}
-
-#left-back {
-	background-color: yellow;
-	padding-right: 5px;
-	transform: translateX(-15px) skew(-20deg);
+.spacer {
+	width: 5px;
 	height: 100%;
-	z-index: 2;
+	background-color: var(--uwcs-yellow);
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
-#left-front {
-	background-color: blue;
-	height: 100%;
-	z-index: 3;
+#left {
+	background-color: var(--uwcs-light-grey);
+	transform: skew(-20deg) translateX(-20px);
+	box-shadow: 0 0 10px var(--uwcs-blue);
 }
 
-#logo {
-	height: 72px;
+#wasd-logo {
+	margin-left: 30px;
+	height: 90%;
 	transform: skew(20deg);
-	margin: 0 20px;
-	z-index: 4;
-}
-
-#right {
-	height: 100%;
-}
-
-#right-back {
-	background-color: yellow;
-	transform: translateX(15px) skew(-20deg);
-	padding-left: 5px;
-	height: 100%;
-	z-index: 2;
-}
-
-#right-front {
-	background-color: blue;
-	height: 100%;
-	z-index: 3;
-}
-
-#donation-total {
-	transform: skew(20deg);
-	font-size: 36px;
-	margin: 0 20px;
-	z-index: 4;
 }
 
 #middle {
-	/* flex 1 to expand */
 	flex: 1;
-	height: 100%;
-	/* postion relative to child elements use
-	 * position absolute relative to this element and not to #bar */
-	position: relative;
 }
 
-#label {
-	height: 100%;
-	position: absolute;
+#right {
+	background-color: var(--uwcs-light-grey);
+	transform: skew(-20deg) translateX(20px);
+	box-shadow: 0 0 10px var(--uwcs-blue);
 }
 
-#label-bg {
-	height: 100%;
-	transform: skew(-20deg);
-	background-color: #2f3136;
-	z-index: 0;
-}
-
-#label-text {
+#total {
+	margin-left: 20px;
 	transform: skew(20deg);
-	margin-left: 30px;
-	margin-right: 10px;
-	z-index: 1;
+	font-size: 40px;
 }
 
-#next {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	z-index: -1;
-}
-
-#next-game {
-	font-size: 26px;
-}
-
-#next-info {
-	font-size: 20px;
-}
-
-#cta {
-	position: absolute;
-	top: 0;
-	right: 0; left: 0;
-	margin-left: auto; margin-right: auto;
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	font-weight: 700;
-	font-size: 36px;
-}
-
-#cta > div {
-	line-height: 70px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: clip;
+#charity-logo {
+	margin-right: 30px;
+	height: 80%;
+	transform: skew(20deg);
 }
