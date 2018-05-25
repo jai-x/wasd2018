@@ -1,0 +1,49 @@
+:root {
+	--uwcs-blue:       #3D53FF;
+	--uwcs-dark-blue:  #162160;
+	--uwcs-white-blue: #E4E8FF;
+	--uwcs-dark-grey:  #222528;
+	--uwcs-light-grey: #2E3337;
+	--uwcs-yellow:     #FDD835;
+}
+
+/* Google fonts Montserrat */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Montserrat", sans-serif;
+	color: var(--uwcs-white-blue);
+}
+
+.panel {
+	background-color: var(--uwcs-dark-grey);
+	padding: 9px;
+}
+
+.inset-border {
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+	border: 3px solid var(--uwcs-light-grey);
+	margin: 5px;
+}
+
+/* graphics layout sizing */
+#layout {
+	width: 1920px;
+	height: 982px;
+	position: absolute;
+	overflow: visible;
+}
+
+/* bar sizing */
+#bar {
+	width: 1920px;
+	height: 98px;
+	position: absolute;
+	overflow: visible;
+}

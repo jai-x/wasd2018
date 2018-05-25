@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./bar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js" defer></script>
+    <script src="./bar.js" defer></script>
+  </head>
+  <body>
+    <div id="bar" class="flex-row">
+      <div id="left" class="flex-row">
+        <div id="left-back" class="flex-row">
+          <div id="left-front" class="flex-row">
+            <img id="logo" src="../wasd-logo-cropped.png">
+          </div>
+        </div>
+      </div>
+
+      <div id="middle">
+        <div id="label">
+          <div id="label-bg" class="flex-row">
+            <span id="label-text">Coming up:</span>
+          </div>
+        </div>
+        <div id="next">
+          <span id="next-game">&lt;game-title&gt;</span>
+          <span id="next-info">&lt;run-type&gt; - &lt;runner-names&gt;</span>
+        </div>
+        <div id="cta">
+          <div>
+            <span id="wasd-w">W</span><span class="wasd-word">arwick's</span>
+            <span id="wasd-a">A</span><span class="wasd-word">wesome</span>
+            <span id="wasd-s">S</span><span class="wasd-word">peedruns &amp;</span>
+            <span id="wasd-d">D</span><span class="wasd-word">emos</span>
+            <span id="wasd-year">2018</span>
+          </div>
+          <div>
+            <span>Raising money for &lt;charity&gt;</span>
+          </div>
+          <div>
+            <span>Donate at &lt;donate-link&gt;</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="right" class="flex-row">
+        <div id="right-back" class="flex-row">
+          <div id="right-front" class="flex-row">
+            <span id="donation-total"><b>£&lt;total&gt;</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+/* https://simplelineicons.com MIT License */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css");
+
+body {
+	font-size: 18px;
+}
+
+/* Button styling */
+button {
+	padding: 5px 18px;
+	font-size: 18px;
+	border-radius: 2px;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: white;
+	background-color: #2196f3;
+	outline: none;
+	border: none;
+	box-shadow: 0 0 4px #999;
+	margin: 2px;
+}
+
+button:disabled {
+	opacity: 0.3;
+	border: 1px solid black;
+}
+
+label {
+	display: block;
+	font-size: 16px;
+}
+
+input {
+	font-size: 18px;
+	padding: 5px 0;
+	border: none;
+	border-bottom: 2px solid ;
+}
+
+.red {
+	background-color: red;
+}
+
+.green {
+	background-color: green;
+}
+
+.light-green {
+	background-color: #00ef00;
+}
+
+.orange {
+	background-color: orange;
+}

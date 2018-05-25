@@ -1,0 +1,49 @@
+{
+	"$schema": "https://json-schema.org/draft-04/schema#",
+
+	"definitions": {
+		"run": {
+			"type": "object",
+			"properties": {
+				"game":          { "type": "string", "default": "" },
+				"gameYear":      { "type": "string", "default": "" },
+				"gamePlatform":  { "type": "string", "default": "" },
+				"category":      { "type": "string", "default": "" },
+				"estimate":      { "type": "string", "default": "" },
+				"runner1":       { "type": "string", "default": "" },
+				"runner1Twitch": { "type": "string", "default": "" },
+				"runner2":       { "type": "string", "default": "" },
+				"runner2Twitch": { "type": "string", "default": "" },
+				"runner3":       { "type": "string", "default": "" },
+				"runner3Twitch": { "type": "string", "default": "" },
+				"runner4":       { "type": "string", "default": "" },
+				"runner4Twitch": { "type": "string", "default": "" }
+			},
+			"additionaProperties": false,
+			"required": ["game", "gameYear", "gamePlatform", "category", "estimate", "runner1"]
+		}
+	},
+
+	"type": "object",
+
+	"properties": {
+		"current": {
+			"type":        "integer",
+			"minimum":     0,
+			"description": "Index of current run in schedule.",
+			"default":     0
+		},
+		"edit": {
+			"type":        "integer",
+			"minimum":     0,
+			"description": "The index of which entry to edit.",
+			"default":     0
+		},
+		"entries": {
+			"type":        "array",
+			"items":       { "$ref": "#/definitions/run" },
+			"default":     []
+		},
+		"required": ["current", "edit", "entries"]
+	}
+}

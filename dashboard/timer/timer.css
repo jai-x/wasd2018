@@ -1,0 +1,16 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+body > * {
+	margin: 5px 0;
+}
+
+#timer-display {
+	width: 9ch;
+	font-size: 50px;
+	text-align: center;
+}

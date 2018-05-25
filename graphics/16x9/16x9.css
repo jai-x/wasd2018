@@ -1,0 +1,76 @@
+.row-space-even {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#cam {
+	position: absolute;
+	top: 0; left: 0;
+	width: 400px; height: 491px;
+}
+
+#sponsors {
+	position: absolute;
+	top: 491px; left: 0;
+	width: 400px; height: 491px;
+}
+
+#game {
+	position: absolute;
+	top: 0; right: 0;
+	width: 1520px; height: 855px;
+}
+
+#info-panel-1 {
+	position: absolute;
+	bottom: 0; right: 760px;
+	width: 760px; height: 127px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#info-row {
+	width: 100%;
+}
+
+#game-title {
+	font-size: 30px;
+}
+
+#run-category {
+	font-weight: bold;
+	text-align: center;
+	padding: 5px;
+	width: 100%;
+	background-color: var(--uwcs-blue);
+}
+
+#run-category, #game-year, #game-platform, #run-estimate {
+	font-size: 20px;
+}
+
+#info-panel-2 {
+	position: absolute;
+	bottom: 0; right: 0;
+	width: 760px; height: 127px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#timer {
+	font-size: 50px;
+	text-align: center;
+	width: 100%;
+	background-color: var(--uwcs-blue);
+}
+
+#runners {
+	font-size: 30px;
+}

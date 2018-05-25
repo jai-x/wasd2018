@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft-04/schema#",
+
+	"type": "object",
+
+	"properties": {
+		"time": {
+			"type": "string",
+			"default": "00:00:00"
+		},
+		"displayState": {
+			"type": "string",
+			"default": "reset",
+			"enum": ["reset", "running", "paused"]
+		}
+	},
+
+	"required": ["time", "displayState"]
+}

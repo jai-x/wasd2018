@@ -1,0 +1,40 @@
+/* Schedule table properties */
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 5px;
+	box-shadow: 0 0 4px #999;
+	background-color: white;
+	padding: 5px;
+}
+
+td {
+	text-overflow: ellipsis;
+}
+
+th {
+	text-align: left;
+}
+
+/* Restrict columns by width percentage */
+.table-10 {
+	width: 10%;
+}
+
+.table-15 {
+	width: 15%;
+}
+
+.table-20 {
+	width: 20%;
+}
+
+/* Generic flexbox row */
+.row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 5px;
+}

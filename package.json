@@ -1,0 +1,60 @@
+{
+	"name": "wasd2018",
+	"version": "0.0.1",
+	"description": "Graphics for Warwick's Awesome Speedruns & Demos event",
+	"licence": "MIT",
+	"author": {
+		"name": "Jai Sharma",
+		"email": "jai.p.sharma1@gmail.com",
+		"url": "https://jai.moe"
+	},
+	"dependencies": {
+		"livesplit-core": "^0.9.0"
+	},
+	"nodecg": {
+		"compatibleRange": ">=0.9",
+		"dashboardPanels": [
+			{
+				"name": "timer",
+				"title": "Run Timer",
+				"file": "timer/timer.html",
+				"width": 3
+			},
+			{
+				"name": "schedule",
+				"title": "Schedule",
+				"file": "schedule/schedule.html",
+				"fullbleed": true
+			},
+			{
+				"name": "edit",
+				"title": "Run Edit",
+				"file": "edit/edit.html",
+				"width": 6,
+				"dialog": true,
+				"dialogButtons": [
+					{
+						"name": "Save Changes",
+						"type": "confirm"
+					},
+					{
+						"name": "Discard Changes",
+						"type": "dismiss"
+					}
+				]
+			}
+		],
+		"graphics": [
+			{
+				"file": "bar/bar.html",
+				"width": 1920,
+				"height": 98
+			},
+			{
+				"file": "16x9/16x9.html",
+				"width": 1920,
+				"height": 982
+			}
+		]
+	}
+}
