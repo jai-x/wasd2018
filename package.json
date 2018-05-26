@@ -54,6 +54,11 @@
 				"file": "16x9/16x9.html",
 				"width": 1920,
 				"height": 982
+			},
+			{
+				"file": "ds/ds.html",
+				"width": 1920,
+				"height": 982
 			}
 		]
 	}
