@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft-04/schema#",
+
+	"type": "object",
+
+	"properties": {
+		"symbol": {
+			"type": "string",
+			"default": "£"
+		},
+		"amount": {
+			"type": "integer",
+			"minimum": 0,
+			"default": 0
+		}
+	},
+
+	"required": ["symbol", "amount"]
+}

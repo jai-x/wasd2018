@@ -17,4 +17,12 @@ module.exports = (nodecg) => {
 		nodecg.log.error("Failed to load stopwatch extension:", e.stack);
 		process.exit(1);
 	}
+
+	// JustGiving api integration
+	try {
+		require("./justgiving")(nodecg);
+	} catch (e) {
+		nodecg.log.error("Failed to load justgiving extension:", e.stack);
+		process.exit(1);
+	}
 };

@@ -3,21 +3,22 @@
 let init = false;
 const schedule = nodecg.Replicant("schedule");
 
-class RunEntry {
-	view(vnode) {
-
-	}
-}
+const nameJoin = (...names) => {
+	// Joins non-empty names
+	return Array.from(names).filter(Boolean).join(", ");
+};
 
 class RunRow {
 	view(vnode) {
+		const run = vnode.attrs.run;
+
 		return m("tr", [
-			m("td", vnode.attrs.run.game),
-			m("td", vnode.attrs.run.gameYear),
-			m("td", vnode.attrs.run.gamePlatform),
-			m("td", vnode.attrs.run.category),
-			m("td", vnode.attrs.run.estimate),
-			m("td", vnode.attrs.run.runner1),
+			m("td", run.game),
+			m("td", run.gameYear),
+			m("td", run.gamePlatform),
+			m("td", run.category),
+			m("td", run.estimate),
+			m("td", nameJoin(run.runner1, run.runner2, run.runner3, run.runner4)),
 			m("td", [
 				// edit
 				m("button", {
