@@ -2,7 +2,11 @@
 
 // zero-pad a string to max 2 characters
 const padInt = (num) => {
-	return num.toString().padStart(2, "0");
+	let str = num.toString();
+	while(str.length < 2) {
+		str = '0' + str;
+	}
+	return str;
 };
 
 // convert seconds (integer) to a time string
