@@ -18,6 +18,9 @@ const secondsToTimeString = (seconds) => {
 	return hour + ":" + mins + ":" + secs;
 };
 
+// livesplit-core library
+const lsCore = require("livesplit-core");
+
 // livesplit-core library constants
 const LS_STOPWATCH_PHASE = {
 	NotRunning: 0,
@@ -30,9 +33,6 @@ const LS_STOPWATCH_PHASE = {
 module.exports = (nodecg) => {
 	// stopwatch replicant
 	const stopwatchRep = nodecg.Replicant("stopwatch");
-
-	// livesplit-core library
-	const lsCore = require("livesplit-core");
 
 	// setup stopwatch with a single segment 'finish'
 	const lsRun = lsCore.Run.new();
