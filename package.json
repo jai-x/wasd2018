@@ -64,6 +64,11 @@
 				"file": "ds/ds.html",
 				"width": 1920,
 				"height": 982
+			},
+			{
+				"file": "break/break.html",
+				"width": 1920,
+				"height": 982
 			}
 		]
 	}

@@ -18,6 +18,22 @@ const runner4Twitch = document.getElementById("runner4-twitch");
 // Replicant
 const schedule = nodecg.Replicant("schedule");
 
+const formatNames = (...names) => {
+	const nameArr = Array.from(names).filter(Boolean);
+
+	if (nameArr.length == 1) {
+		return nameArr[0];
+	}
+
+	if (nameArr.length == 2) {
+		return nameArr[0] + " & " + nameArr[1];
+	}
+
+	if (nameArr.length > 2) {
+		return nameArr[0] + ", " + formatNames(...nameArr.slice(1));
+	}
+};
+
 // Update the inputs with the values of the given run
 const pushRun = (run) => {
 	// Using || "" to coerce undefined or null values to empty string
@@ -39,19 +55,20 @@ const pushRun = (run) => {
 // Return a run from the values of the inputs
 const pullRun = () => {
 	return {
-		game:          gameTitle.value,
-		gameYear:      gameYear.value,
-		gamePlatform:  gamePlatform.value,
-		category:      runCategory.value,
-		estimate:      runEstimate.value,
-		runner1:       runner1.value,
-		runner1Twitch: runner1Twitch.value,
-		runner2:       runner2.value,
-		runner2Twitch: runner2Twitch.value,
-		runner3:       runner3.value,
-		runner3Twitch: runner3Twitch.value,
-		runner4:       runner4.value,
-		runner4Twitch: runner4Twitch.value
+		game:           gameTitle.value,
+		gameYear:       gameYear.value,
+		gamePlatform:   gamePlatform.value,
+		category:       runCategory.value,
+		estimate:       runEstimate.value,
+		runner1:        runner1.value,
+		runner1Twitch:  runner1Twitch.value,
+		runner2:        runner2.value,
+		runner2Twitch:  runner2Twitch.value,
+		runner3:        runner3.value,
+		runner3Twitch:  runner3Twitch.value,
+		runner4:        runner4.value,
+		runner4Twitch:  runner4Twitch.value,
+		formattedNames: formatNames(runner1.value, runner2.value, runner3.value, runner4.value)
 	};
 };
 

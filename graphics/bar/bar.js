@@ -21,16 +21,10 @@ total.on("change", (newVal, oldVal) => {
 });
 
 schedule.on("change", (newVal, oldVal) => {
-	const e = newVal.current;
-	// copy the next three runs from the current run into the next runs object
-	// property
-	nextRuns.nextThree = newVal.entries.slice(e+1, e+4);
+	const next = newVal.current + 1;
+	// copy the next three runs ahead from the upcoming run
+	nextRuns.nextThree = newVal.entries.slice(next, next+3);
 });
-
-const nameJoin = (...names) => {
-	// Joins non-empty names
-	return Array.from(names).filter(Boolean).join(", ");
-};
 
 const label = new class {
 	constructor() {
@@ -87,8 +81,7 @@ const nextRuns = new class {
 		this.container.innerHTML = null;
 		// Build and append new run elements from data
 		this.nextThree.forEach((run) => {
-			const names = nameJoin(run.runner1, run.runner2, run.runner3, run.runner4);
-			const info = run.category + " by " + names;
+			const info = run.category + " by " + run.formattedNames;
 			const html = this.elementHTML(run.game, info);
 			this.container.innerHTML += html;
 		});
@@ -177,4 +170,4 @@ const cta = new class {
 };
 
 // GO! GO! GO!
-cta.show(true);
+//cta.show(true);

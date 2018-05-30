@@ -1,0 +1,24 @@
+#layout {
+	background-color: var(--uwcs-dark-grey);
+	overflow: hidden;
+}
+
+.bg {
+	position: absolute;
+	background-position: center;
+	background-size: cover;
+	width: 25px; height: 25px;
+}
+
+.cross {
+	background-image: url("../img/cross-bg.svg");
+}
+.rectangle {
+	background-image: url("../img/rectangle-bg.svg");
+}
+.oval {
+	background-image: url("../img/oval-bg.svg");
+}
+.triangle {
+	background-image: url("../img/triangle-bg.svg");
+}

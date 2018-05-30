@@ -15,11 +15,6 @@ const timer = document.getElementById("timer");
 const schedule  = nodecg.Replicant("schedule");
 const stopwatch = nodecg.Replicant("stopwatch");
 
-const nameJoin = (...names) => {
-	// Joins non-empty names
-	return Array.from(names).filter(Boolean).join(", ");
-};
-
 schedule.on("change", (newVal, oldVal) => {
 	const run = newVal.entries[newVal.current];
 
@@ -32,7 +27,7 @@ schedule.on("change", (newVal, oldVal) => {
 	gamePlatform.textContent = run.gamePlatform;
 	gameYear.textContent     = run.gameYear;
 	runEstimate.textContent  = run.estimate;
-	runners.textContent      = nameJoin(run.runner1, run.runner2, run.runner3, run.runner4);
+	runners.textContent      = run.formattedNames;
 });
 
 // flash timer to mark start of timing

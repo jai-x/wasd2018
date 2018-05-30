@@ -37,6 +37,7 @@ body {
 	width: 1920px;
 	height: 982px;
 	position: absolute;
+	overflow: hidden;
 }
 
 /* bar sizing */
@@ -44,4 +45,5 @@ body {
 	width: 1920px;
 	height: 98px;
 	position: absolute;
+	overflow: hidden;
 }
