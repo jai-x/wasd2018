@@ -1,11 +1,5 @@
 "use strict";
 
-// Constants
-const maxWidth = 1920;
-const maxHeight = 982;
-const maxBGElements = 50;
-const bgClasses = ["cross", "rectangle", "oval", "triangle"];
-
 // Replicant
 const schedule = nodecg.Replicant("schedule");
 
@@ -14,34 +8,63 @@ schedule.on("change", (newVal, oldVal) => {
 	const nextRun = newVal.entries[n];
 });
 
-const plusOrMinus = () => Math.random() < 0.5 ? -1 : 1;
 
+
+
+// Helper functions
+const randFloat = (min, max) => (Math.random() * (max - min) + min).toFixed(1);
+const randInt = (min, max) => anime.random(min, max);
+const plusOrMinus = () => Math.random() < 0.5 ? -1 : 1;
+const deviation = (min, max) => randInt(min, max) * plusOrMinus();
+
+// Generate random background elements, add them to the document and return
+// an array of the elements
 const generateBG = () => {
+	const bgClasses = ["cross", "rectangle", "oval", "triangle", "dot"];
+
+	const maxWidth = 1920;
+	const maxHeight = 982;
+	const offset = 50;
+
+	const bgElemRows = 6;
+	const bgElemCols = 9;
+
 	const frag = document.createDocumentFragment();
 	const elementArr = new Array();
-	for(let i = 0; i < maxBGElements; i++) {
-		const e = document.createElement("div");
-		e.classList.add("bg", bgClasses[anime.random(0, bgClasses.length)]);
-		e.style.left = anime.random(0, maxWidth) + "px";
-		e.style.top = anime.random(0, maxHeight) + "px";
-		frag.appendChild(e);
-		elementArr.push(e);
+
+	const xSpacing = Math.round(maxWidth / bgElemCols);
+	const ySpacing = Math.round(maxHeight / bgElemRows);
+
+	for (let x = 0; x < bgElemCols; x++) {
+		for (let y = 0; y < bgElemRows; y++) {
+			const e = document.createElement("div");
+			e.classList.add("bg", bgClasses[randInt(0, bgClasses.length - 1)]);
+			e.style.left = (xSpacing * x) + offset + deviation(10, 100) + "px";
+			e.style.top = (ySpacing * y) + offset + deviation(10, 60) + "px";
+			frag.appendChild(e);
+			elementArr.push(e);
+		}
 	}
-	document.getElementById("layout").appendChild(frag);
+
+	document.getElementById("break").appendChild(frag);
 	return elementArr;
 };
 
-const animateBG = (el, i) => {
+// Animation function for a given background element
+const animateBG = (element) => {
 	anime({
-		targets: el,
-		translateX: anime.random(10, 300) * plusOrMinus(),
-		translateY: anime.random(10, 200) * plusOrMinus(),
+		targets: element,
+		translateY: deviation(10, 200),
+		translateX: [deviation(0, 10), deviation(0, 10)],
+		scale: [randFloat(0.5, 1.1), randFloat(0.5, 1.1)],
+		opacity: [randFloat(0.2, 0.6), randFloat(0.2, 0.6)],
 		duration: 15000,
 		direction: "alternate",
-		offset: 500 * i,
+		offset: randInt(0, 10000),
 		loop: true,
 		easing: "easeInOutSine",
 	});
 };
 
+// Run the generate function and then apply the animation for each element
 generateBG().forEach(animateBG);

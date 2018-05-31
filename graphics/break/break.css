@@ -1,13 +1,40 @@
-#layout {
+#break {
 	background-color: var(--uwcs-dark-grey);
 	overflow: hidden;
+	width: 1920px;
+	height: 1080px;
+	position: absolute;
+	z-index: -999;
 }
 
+#logo {
+	height: 300px;
+}
+
+/* How can into CSS shape: https://css-tricks.com/examples/ShapesOfCSS/ */
+#top-triangle {
+	position: absolute;
+	top: 0px; left: 0px;
+	width: 0px; height: 0px;
+	border-top: 350px solid var(--uwcs-light-grey);
+	border-right: 400px solid transparent;
+}
+
+#bottom-triangle {
+	position: absolute;
+	right: 0px; bottom: 0px;
+	width: 0px; height: 0px;
+	border-bottom: 350px solid var(--uwcs-light-grey);
+	border-left: 400px solid transparent;
+}
+
+/* Background element stuff */
 .bg {
 	position: absolute;
 	background-position: center;
 	background-size: cover;
 	width: 25px; height: 25px;
+	z-index: -1;
 }
 
 .cross {
@@ -17,6 +44,10 @@
 	background-image: url("../img/rectangle-bg.svg");
 }
 .oval {
+	background-image: url("../img/oval-bg.svg");
+}
+
+.dot {
 	background-image: url("../img/oval-bg.svg");
 }
 .triangle {

@@ -26,6 +26,7 @@ schedule.on("change", (newVal, oldVal) => {
 	nextRuns.nextThree = newVal.entries.slice(next, next+3);
 });
 
+// Manage and animate the label
 const label = new class {
 	constructor() {
 		this.anim = anime({
@@ -41,7 +42,7 @@ const label = new class {
 		this.anim.reset();
 		this.anim.play();
 		if (advance) {
-			setTimeout(() => {nextRuns.show(true);}, this.anim.duration + 500);
+			this.anim.complete = () => nextRuns.show(advance);
 		}
 	};
 
@@ -49,11 +50,12 @@ const label = new class {
 		this.anim.reverse();
 		this.anim.play();
 		if (advance) {
-			setTimeout(() => {cta.show(true);}, this.anim.duration + 500);
+			this.anim.complete = () => cta.show(advance);
 		}
 	};
 };
 
+// Manage an aimate the next runs
 const nextRuns = new class {
 	constructor() {
 		// copy of the next three runs from the schedule
@@ -91,7 +93,7 @@ const nextRuns = new class {
 			translateX: [
 				{value: 1500, duration: 0},
 				{value: 0, duration: 1500},
-				{value: -1500, duration: 1500, delay: 10000},
+				{value: -1500, duration: 1500, delay: 15000},
 			],
 			delay: (el, i) => { return 50 * (i + 1); },
 			easing: "easeOutCubic",
@@ -104,11 +106,12 @@ const nextRuns = new class {
 		this.anim.reset();
 		this.anim.play();
 		if (advance) {
-			setTimeout(() => {label.hide(true);}, this.anim.duration + 500);
+			this.anim.complete = () => label.hide(advance);
 		}
 	};
 };
 
+// Manage and animate the call to action
 const cta = new class {
 	constructor() {
 		this.anim = anime.timeline({autoplay: false})
@@ -164,10 +167,10 @@ const cta = new class {
 		this.anim.reset();
 		this.anim.play();
 		if (advance) {
-			setTimeout(() => {label.show(true);}, this.anim.duration + 500);
+			this.anim.complete = () => label.show(advance);
 		}
 	};
 };
 
-// GO! GO! GO!
+// GO! GO! GO! Disable in dev
 //cta.show(true);

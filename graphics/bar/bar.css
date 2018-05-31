@@ -30,7 +30,8 @@
 }
 
 #wasd-logo {
-	margin-left: 30px;
+	margin-left: 40px;
+	margin-right: 10px;
 	height: 90%;
 	transform: skew(20deg);
 	z-index: 999;
@@ -84,10 +85,10 @@
 }
 
 .run-bg {
-	padding: 20px;
-	background-color: var(--uwcs-dark-grey);
-	border: 0px solid var(--uwcs-yellow);
-	box-shadow: 0 0 10px var(--uwcs-blue);
+	height: 80%;
+	padding: 15px 20px 10px 20px;
+	background-color: var(--uwcs-light-grey);
+	/*box-shadow: 0 0 10px var(--uwcs-blue);*/
 	transform: skew(-20deg);
 	z-index: 0;
 }
@@ -133,7 +134,8 @@
 }
 
 #charity-logo {
-	margin-right: 30px;
+	margin-right: 40px;
+	margin-left: 10px;
 	height: 80%;
 	transform: skew(20deg);
 }
