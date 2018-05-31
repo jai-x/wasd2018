@@ -31,8 +31,11 @@ const label = new class {
 	constructor() {
 		this.anim = anime({
 			targets: "#label",
-			translateX: [-200, -20],
-			duration: 700,
+			translateX: [
+				{value: -200, duration: 0},
+				{value: -20, duration: 700},
+				{value: -200, duration: 700},
+			],
 			easing: "easeOutCubic",
 			autoplay: false
 		});
@@ -41,13 +44,19 @@ const label = new class {
 	show(advance) {
 		this.anim.reset();
 		this.anim.play();
-		if (advance) {
-			this.anim.complete = () => nextRuns.show(advance);
+		//  Add callback function that runs on each animation frame
+		this.anim.update = (anim) => {
+			// Pause halfway through as full animation goes in and out
+			if (Math.round(anim.progress) == 50) {
+				anim.pause();
+				if (advance) nextRuns.show(advance);
+			}
 		}
 	};
 
 	hide(advance) {
-		this.anim.reverse();
+		// Remove callback function
+		this.anim.update = null;
 		this.anim.play();
 		if (advance) {
 			this.anim.complete = () => cta.show(advance);
@@ -55,7 +64,7 @@ const label = new class {
 	};
 };
 
-// Manage an aimate the next runs
+// Manage and animate the next runs
 const nextRuns = new class {
 	constructor() {
 		// copy of the next three runs from the schedule
