@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft-04/schema#",
+
+	"type": "object",
+
+	"properties": {
+		"status": {
+			"type": "string",
+			"default": "ready",
+			"enum": ["ready", "fetching"]
+		},
+		"message": {
+			"type": "string",
+			"default": ""
+		}
+	},
+
+	"required": ["status", "message"]
+}

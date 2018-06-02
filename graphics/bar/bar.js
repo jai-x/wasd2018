@@ -182,4 +182,4 @@ const cta = new class {
 };
 
 // GO! GO! GO! Disable in dev
-//cta.show(true);
+cta.show(true);

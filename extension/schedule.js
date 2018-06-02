@@ -65,16 +65,4 @@ module.exports = (nodecg) => {
 			schedule.value.current--;
 		}
 	});
-
-	nodecg.log.info("schedule extension loaded");
-
-	/* test value
-	schedule.value.entries[0] = {
-		game:          "Rise of the Tomb Raider",
-		gameYear:      "2015",
-		gamePlatform:  "PC",
-		category:      "Any% Glitched",
-		estimate:      "1:00:00",
-		runner1:       "zed0"
-	};*/
 };

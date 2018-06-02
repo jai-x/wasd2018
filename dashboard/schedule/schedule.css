@@ -1,12 +1,8 @@
 /* Schedule table properties */
 table {
 	table-layout: fixed;
-	width: 100%;
-	border-collapse: separate;
+	border-collapse: collapse;
 	border-spacing: 5px;
-	box-shadow: 0 0 4px #999;
-	background-color: white;
-	padding: 5px;
 }
 
 td {
@@ -15,6 +11,14 @@ td {
 
 th {
 	text-align: left;
+}
+
+tr.current {
+	border: 2px solid red;
+}
+
+#horaro-input {
+	flex: 1;
 }
 
 /* Restrict columns by width percentage */
@@ -35,6 +39,15 @@ th {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
-	margin: 5px;
+	justify-content: space-between;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: white;
+	box-shadow: 0 0 4px #999;
+	padding: 5px;
+}
+
+.row > *{
+	margin-left: 20px;
+	margin-right: 20px;
 }

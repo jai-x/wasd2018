@@ -2,14 +2,16 @@
 	"name": "wasd2018",
 	"version": "0.0.1",
 	"description": "Graphics for Warwick's Awesome Speedruns & Demos event",
-	"licence": "MIT",
+	"license": "MIT",
 	"author": {
 		"name": "Jai Sharma",
 		"email": "jai.p.sharma1@gmail.com",
 		"url": "https://jai.moe"
 	},
 	"dependencies": {
-		"livesplit-core": "^0.9.0"
+		"livesplit-core": "^0.9.0",
+		"request": "^2.87.0",
+		"request-promise-native": "^1.0.5"
 	},
 	"nodecg": {
 		"compatibleRange": ">=0.9",

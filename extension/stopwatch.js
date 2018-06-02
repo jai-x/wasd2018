@@ -108,6 +108,4 @@ module.exports = (nodecg) => {
 
 	// prevent invalid state on startip
 	reset();
-
-	nodecg.log.info("stopwatch extension loaded");
 };
