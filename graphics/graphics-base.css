@@ -1,3 +1,9 @@
+/* https://simplelineicons.com MIT License */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css");
+
+/* Google fonts Montserrat */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 :root {
 	--uwcs-blue:       #3D53FF;
 	--uwcs-dark-blue:  #162160;
@@ -7,9 +13,6 @@
 	--uwcs-yellow:     #FDD835;
 }
 
-/* Google fonts Montserrat */
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
 * {
 	box-sizing: border-box;
 }
@@ -17,6 +20,7 @@
 body {
 	margin: 0;
 	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
 	color: var(--uwcs-white-blue);
 }
 

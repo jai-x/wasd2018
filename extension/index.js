@@ -2,7 +2,6 @@
 
 const extensions = [
 	"schedule",
-	"horaro",
 	"stopwatch",
 	"justgiving",
 ];

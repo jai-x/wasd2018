@@ -1,7 +1,6 @@
 "use strict";
 
 const schedule = nodecg.Replicant("schedule");
-const horaro   = nodecg.Replicant("horaro");
 
 class RunRow {
 	view(vnode) {
@@ -85,42 +84,30 @@ class ScheduleTable {
 	}
 }
 
-class HoraroImport {
-	send() {
-		const input = document.getElementById("horaro-input");
-		if (!input.validity.valid) {
-			// Not valid input !
-			return;
-		}
-		nodecg.sendMessage("horaroImportLink", input.value);
-	}
-
-	view() {
-		if (!horaro.value) {
-			return m(".row", "Waiting for Horaro data");
-		}
-
-		const disable = (horaro.value.status != "ready");
-
-		return m(".row", [
-			m("div", "Import Schedule from Horaro"),
-			m("input[type=url]#horaro-input", {required: true}),
-			m("div", horaro.value.message),
-			m("button", {onclick: this.send, disabled: disable}, "import"),
-		]);
-	}	
-}
-
 class ScheduleButtons {
 	view() {
+		if (!schedule.value) {
+			return m(".row", "Waiting for Schedule data");
+		}
+
+		const last = schedule.value.entries.length - 1;
+		const first = 0;
+		const current = schedule.value.current;
+
 		return m(".row", [
-			m("button", "Previous Run"),
 			m("button", {
-				onclick: () => { nodecg.sendMessage("scheduleEditNew"); },
+				disabled: (current == first),
+				onclick: () => nodecg.sendMessage("scheduleCurrentBack"),
+			}, "Previous Run"),
+			m("button", {
+				onclick: () => nodecg.sendMessage("scheduleEditNew"),
 				id: "add-run",
 				"nodecg-dialog": "edit"
 			}, "Add new run"),
-			m("button", "Next Run"),
+			m("button", {
+				disabled: (current == last),
+				onclick: () => nodecg.sendMessage("scheduleCurrentForward"),
+			}, "Next Run"),
 		]);
 	}
 }
@@ -130,7 +117,6 @@ class ScheduleManager {
 		return [
 			m(ScheduleTable),
 			m(ScheduleButtons),
-			m(HoraroImport),
 		];
 	}
 }
@@ -138,11 +124,6 @@ class ScheduleManager {
 m.mount(document.body, ScheduleManager);
 
 schedule.on("change", () => {
-	// update component on new data
-	m.redraw();
-});
-
-horaro.on("change", () => {
 	// update component on new data
 	m.redraw();
 });
