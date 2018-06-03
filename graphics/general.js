@@ -40,8 +40,8 @@ const flashTimer = () => {
 			{value: "#fdd835"}  // UWCS Yellow
 		],
 		direction: "alternate",
-		duration: 500,
-		easing: "easeOutQuad"
+		duration: 1000,
+		easing: "easeInOutSine"
 	});
 };
 

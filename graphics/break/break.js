@@ -46,7 +46,7 @@ const generateBG = () => {
 		}
 	}
 
-	document.getElementById("break").appendChild(frag);
+	document.getElementById("background-elements").appendChild(frag);
 	return elementArr;
 };
 
