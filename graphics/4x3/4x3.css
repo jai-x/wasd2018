@@ -7,25 +7,26 @@
 #cam {
 	position: absolute;
 	top: 0; left: 0;
-	width: 611px; height: 364px;
+	width: 574px; height: 364px;
 }
 
 #sponsors {
 	position: absolute;
-	top: 618px; left: 0;
-	width: 611px; height: 364px;
+	bottom: 0; left: 0;
+	width: 574px; height: 364px;
 }
 
+/* 4:3 aspect ratio for game screen */
 #game {
 	position: absolute;
 	top: 0; right: 0;
-	width: 1309px; height: 982px;
+	width: 1346px; height: 1010px;
 }
 
 #info-panel-1 {
 	position: absolute;
 	top: 364px; left: 0;
-	width: 611px; height: 127px;
+	width: 574px; height: 141px;
 
 	display: flex;
 	flex-direction: column;
@@ -38,7 +39,7 @@
 }
 
 #game-title {
-	font-size: 30px;
+	font-size: 35px;
 }
 
 #run-category {
@@ -50,13 +51,13 @@
 }
 
 #run-category, #game-year, #game-platform, #run-estimate {
-	font-size: 20px;
+	font-size: 25px;
 }
 
 #info-panel-2 {
 	position: absolute;
-	top: 491px; left: 0;
-	width: 611px; height: 127px;
+	top: 505px; left: 0;
+	width: 574px; height: 141px;
 
 	display: flex;
 	flex-direction: column;
@@ -65,12 +66,12 @@
 }
 
 #timer {
-	font-size: 50px;
+	font-size: 55px;
 	text-align: center;
 	width: 100%;
 	background-color: var(--uwcs-blue);
 }
 
 #runners {
-	font-size: 30px;
+	font-size: 35px;
 }

@@ -1,8 +1,5 @@
-/* https://simplelineicons.com MIT License */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css");
-
-/* Google fonts Montserrat */
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
 :root {
 	--uwcs-blue:       #3D53FF;
@@ -19,7 +16,7 @@
 
 body {
 	margin: 0;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Ubuntu Mono", monospace;
 	font-weight: bold;
 	color: var(--uwcs-white-blue);
 }
@@ -39,7 +36,7 @@ body {
 /* graphics layout sizing */
 #layout {
 	width: 1920px;
-	height: 982px;
+	height: 1010px;
 	position: absolute;
 	overflow: hidden;
 }
@@ -47,7 +44,13 @@ body {
 /* bar sizing */
 #bar {
 	width: 1920px;
-	height: 98px;
+	height: 70px;
 	position: absolute;
 	overflow: hidden;
+}
+
+#timer-icon {
+	height: 25px;
+	width: 25px;
+	margin-right: 10px;
 }

@@ -25,28 +25,28 @@ class RunRow {
 					onclick: () => {
 						nodecg.sendMessage("scheduleEdit", index);
 					}
-				}, m("i", {class: "icon-options"})),
+				}, m("img.icon", {src: "./edit-icon.svg"})),
 				// delete
 				m("button", {
 					class: "red",
 					onclick: () => {
 						nodecg.sendMessage("scheduleDelete", index);
 					}
-				}, m("i", {class: "icon-trash"})),
+				}, m("img.icon", {src: "./delete-icon.svg"})),
 				// up
 				m("button", {
 					disabled: vnode.attrs.first,
 					onclick: () => {
 						nodecg.sendMessage("scheduleMoveBack", index);
 					}
-				}, m("i", {class: "icon-arrow-up"})),
+				}, m("img.icon", {src: "./arrow-up-icon.svg"})),
 				// down
 				m("button", {
 					disabled: vnode.attrs.last,
 					onclick: () => {
 						nodecg.sendMessage("scheduleMoveForward", index);
 					}
-				}, m("i", {class: "icon-arrow-down"})),
+				}, m("img.icon", {src: "./arrow-down-icon.svg"})),
 			])
 		]);
 	}

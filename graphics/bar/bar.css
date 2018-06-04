@@ -86,9 +86,8 @@
 
 .run-bg {
 	height: 80%;
-	padding: 15px 20px 10px 20px;
+	padding: 5px 20px 2px 20px;
 	background-color: var(--uwcs-light-grey);
-	/*box-shadow: 0 0 10px var(--uwcs-blue);*/
 	transform: skew(-20deg);
 	z-index: 0;
 }
@@ -112,7 +111,7 @@
 	top: 0;
 	width: 100%;
 	font-size: 50px;
-	line-height: 96px;
+	line-height: 70px;
 }
 
 .wasd-word, #wasd-w, #wasd-a, #wasd-s, #wasd-d, #wasd-year {

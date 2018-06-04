@@ -53,6 +53,29 @@ const updateTotal = (env, appId, pageShortName) => {
 		});
 };
 
+const updateDonations = (env, appId, pageShortName) => {
+	const url = constructUrl(env, PAGE_DONATIONS, appId, pageShortName);
+	nodecg.log.debug("Fetching page donations with url:", url);
+
+	const options = {
+		method: "GET",
+		timeout: 5000,
+		uri: url,
+		json: true,
+		headers: {
+			"Accept": "application/json"
+		}
+	};
+
+	request(options)
+		.then((data) => {
+			// TODO
+		})
+		.catch((data) => {
+			// TODO
+		});
+};
+
 const init = () => {
 	// Get values from conf
 	const env = nodecg.bundleConfig.justgiving.live ? LIVE : SANDBOX;
@@ -71,8 +94,6 @@ const init = () => {
 		nodecg.log.warn("JustGiving extension will not run");
 		return;
 	}
-
-	updateTotal(env, appId, pageShortName);
 }
 
-init();
+//init();

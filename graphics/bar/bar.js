@@ -127,11 +127,11 @@ const cta = new class {
 			.add({
 				targets: "#cta",
 				translateY: [
-					{value: 96,   duration: 0},
+					{value: 70,   duration: 0},
 					{value: 0,    duration: 500},
-					{value: -96,  duration: 500, delay: 10000},
-					{value: -192, duration: 500, delay: 10000},
-					{value: -288, duration: 500, delay: 10000},
+					{value: -70,  duration: 500, delay: 10000},
+					{value: -140, duration: 500, delay: 10000},
+					{value: -210, duration: 500, delay: 10000},
 				],
 				easing: "easeOutCubic",
 			})
@@ -144,7 +144,7 @@ const cta = new class {
 			})
 			.add({
 				targets: "#wasd-a",
-				translateX: 200,
+				translateX: 173,
 				duration: 500,
 				offset: 5500,
 				easing: "easeOutCubic"

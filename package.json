@@ -50,22 +50,22 @@
 			{
 				"file": "bar/bar.html",
 				"width": 1920,
-				"height": 98
+				"height": 70
 			},
 			{
 				"file": "4x3/4x3.html",
 				"width": 1920,
-				"height": 982
+				"height": 1010
 			},
 			{
 				"file": "16x9/16x9.html",
 				"width": 1920,
-				"height": 982
+				"height": 1010
 			},
 			{
 				"file": "ds/ds.html",
 				"width": 1920,
-				"height": 982
+				"height": 1010
 			},
 			{
 				"file": "break/break.html",
