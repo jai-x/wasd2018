@@ -12,9 +12,6 @@ framework, under the MIT license.
 The dashboard uses [MithrilJS](https://mithril.js.org) for creating user
 interface components, under the  MIT license.
 
-The dashboard uses [Simple line icons](http://simplelineicons.com) to provide
-CSS based icons in the user interface, under the MIT license.
-
 The broadcast graphics use the [anime.js](http://animejs.com) JavaScript
 animation engine for animating on screen elements, under the MIT license.
 
