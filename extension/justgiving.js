@@ -48,8 +48,8 @@ const updateTotal = (env, appId, pageShortName) => {
 			};
 		})
 		.catch((data) => {
-			nodecg.log.warn("Unable to fetch JustGiving donation total!");
-			nodecg.log.warn(JSON.stringify(data, null, 2));
+			nodecg.log.error("Unable to fetch JustGiving donation total!");
+			nodecg.log.error(JSON.stringify(data, null, 2));
 		});
 };
 
@@ -77,23 +77,12 @@ const updateDonations = (env, appId, pageShortName) => {
 };
 
 const init = () => {
-	// Get values from conf
-	const env = nodecg.bundleConfig.justgiving.live ? LIVE : SANDBOX;
-	const appId = nodecg.bundleConfig.justgiving.appId;
-	const pageShortName = nodecg.bundleConfig.justgiving.pageShortName;
+	const conf = nodecg.bundleConfig.justgiving;
+	const env = conf.live ? LIVE : SANDBOX;
 
-
-	if (!appId) {
-		nodecg.log.warn("appId not supplied in config");
-		nodecg.log.warn("JustGiving extension will not run");
-		return;
-	}
-
-	if (!pageShortName) {
-		nodecg.log.warn("pageShortName not supplied in config");
-		nodecg.log.warn("JustGiving extension will not run");
-		return;
+	if (!conf.appId || !conf.pageShortName) {
+		throw new Error("JustGiving config requires `appId` & `pageShortName`");
 	}
 }
 
-//init();
+init();

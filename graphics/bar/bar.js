@@ -33,8 +33,8 @@ const label = new class {
 			targets: "#label",
 			translateX: [
 				{value: -200, duration: 0},
-				{value: -20, duration: 700},
-				{value: -200, duration: 700},
+				{value: -20, duration: 800},
+				{value: -200, duration: 800},
 			],
 			easing: "easeOutCubic",
 			autoplay: false
@@ -101,10 +101,10 @@ const nextRuns = new class {
 			targets: ".run",
 			translateX: [
 				{value: 1500, duration: 0},
-				{value: 0, duration: 1500},
-				{value: -1500, duration: 1500, delay: 15000},
+				{value: 0, duration: 2000},
+				{value: -1500, duration: 2000, delay: 30000},
 			],
-			delay: (el, i) => { return 50 * (i + 1); },
+			delay: (el, i) => { return 100 * (i + 1); },
 			easing: "easeOutCubic",
 			autoplay: false,
 		});
@@ -128,10 +128,10 @@ const cta = new class {
 				targets: "#cta",
 				translateY: [
 					{value: 70,   duration: 0},
-					{value: 0,    duration: 500},
-					{value: -70,  duration: 500, delay: 10000},
-					{value: -140, duration: 500, delay: 10000},
-					{value: -210, duration: 500, delay: 10000},
+					{value: 0,    duration: 800},
+					{value: -70,  duration: 800, delay: 10000},
+					{value: -140, duration: 800, delay: 10000},
+					{value: -210, duration: 800, delay: 10000},
 				],
 				easing: "easeOutCubic",
 			})

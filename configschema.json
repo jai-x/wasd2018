@@ -3,13 +3,11 @@
 
 	"type": "object",
 	"additionalProperties": false,
-	"required": ["justgiving"],
-
 	"properties": {
+
 		"justgiving": {
 			"type": "object",
 			"additionalProperties": false,
-			"required": ["appId", "live"],
 			"properties": {
 				"appId": {
 					"type": "string",
@@ -23,7 +21,45 @@
 					"type": "string",
 					"default": ""
 				}
-			}
+			},
+			"required": ["appId", "live"]
+		},
+
+		"twitter": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"consumerKey": {
+					"type": "string",
+					"default": ""
+				},
+				"consumerSecret": {
+					"type": "string",
+					"default": ""
+				},
+				"accessToken": {
+					"type": "string",
+					"default": ""
+				},
+				"accessTokenSecret": {
+					"type": "string",
+					"default": ""
+				},
+				"hashtag": {
+					"type": "string",
+					"default": ""
+				}
+			},
+			"required": [
+				"consumerKey",
+				"consumerSecret",
+				"accessToken",
+				"accessTokenSecret",
+				"hashtag"
+			]
 		}
-	}
+
+	},
+
+	"required": ["justgiving", "twitter"]
 }

@@ -3,7 +3,8 @@
 const extensions = [
 	"schedule",
 	"stopwatch",
-	"justgiving",
+	//"justgiving", // <= Not working 😢
+	"twitter"
 ];
 
 const nodecgApiContext = require("./util/nodecg-api-context");
@@ -15,13 +16,8 @@ module.exports = (nodecg) => {
 	nodecgApiContext.set(nodecg);
 
 	// Load each extension one by one in the array above
-	extensions.forEach(ext => {
-		try {
-			require("./" + ext);
-		} catch (e) {
-			nodecg.log.error("Failed to load " + ext + " extension:", e.stack);
-			process.exit(1);
-		}
+	extensions.forEach((ext) => {
+		require("./" + ext);
 		nodecg.log.info("Loaded extension:", ext);
 	});
 };

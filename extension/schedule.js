@@ -11,7 +11,7 @@ const schedule = nodecg.Replicant("schedule");
 const move = (index, delta) => {
 	const newIndex = index + delta;	
 	if (newIndex < 0 || newIndex > schedule.value.entries.length) {
-		nodecg.log.error("Attempted to move schedule entry out of array bounds");
+		nodecg.log.error("Attempted to move schedule entry to invalid index");
 		return;
 	}
 

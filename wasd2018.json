@@ -1,0 +1,14 @@
+{
+	"justgiving": {
+		"appId": "",
+		"live": false,
+		"pageShortName": ""
+	},
+	"twitter": {
+		"consumerKey": "",
+		"consumerSecret": "",
+		"accessToken": "",
+		"accessTokenSecret": "",
+		"hashtag": ""
+	}
+}

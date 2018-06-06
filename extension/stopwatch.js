@@ -92,7 +92,7 @@ const stopwatchInitGameTime = (ms) => {
 	lsCore.TimeSpan.fromSeconds((ms/1000)).with(t => stopwatch.setGameTime(t));
 };
 
-/* SETUP */
+/* Setup */
 // create a run with a single segment `finish`
 const lsRun = lsCore.Run.new();
 lsRun.pushSegment(lsCore.Segment.new("finish"));

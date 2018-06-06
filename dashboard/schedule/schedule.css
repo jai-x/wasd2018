@@ -42,14 +42,18 @@ tr.current {
 	justify-content: space-between;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	background-color: white;
-	box-shadow: 0 0 4px #999;
-	padding: 5px;
+	/* background-color: white;
+	box-shadow: 0 0 4px #999; 
+	padding: 5px;*/
 }
 
 .row > *{
 	margin-left: 20px;
 	margin-right: 20px;
+}
+
+td > button {
+	padding: 5px 16px;
 }
 
 .icon {

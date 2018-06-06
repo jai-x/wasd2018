@@ -25,8 +25,7 @@ timing library, under the MIT license.
 * Clone this repo and place into the `/bundles` directory of your `nodecg`
   installation
 * Install dependencies by running `npm install` within the `wasd2018` directory
-* Copy `wasd2018.sample.config.json` to the `/cfg` directory of your `nodecg`
-  installation and rename to `wasd2018.json`
+* Copy `wasd2018.json` to the `/cfg` directory of your `nodecg` installation
 * Populate the `wasd2018.json` file with the correct credentials/settings
 * Run using command `node index.js` in the directory of your `nodecg`
   installation
