@@ -28,6 +28,12 @@
 				"width": 3
 			},
 			{
+				"name": "twitter",
+				"title": "Twitter Feed",
+				"file": "twitter/twitter.html",
+				"width": 4
+			},
+			{
 				"name": "donations",
 				"title": "Donations",
 				"file": "donations/donations.html",

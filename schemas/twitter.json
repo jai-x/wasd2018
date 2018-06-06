@@ -1,0 +1,37 @@
+{
+	"$schema": "https://json-schema.org/draft-04/schema#",
+
+	"definitions": {
+		"tweet": {
+			"type": "object",
+			"properties": {
+				"handle": { "type": "string", "default": "" },
+				"text":   { "type": "string", "default": "" }
+			},
+			"additionaProperties": false,
+			"required": ["handle", "text"]
+		}
+	},
+
+	"type": "object",
+
+	"properties": {
+		"hashtag": {
+			"type":    "string",
+			"default": ""
+		},
+		"pending": {
+			"type":    "array",
+			"items":   { "$ref": "#/definitions/tweet" },
+			"default": []
+		},
+		"approved": {
+			"type":    "array",
+			"items":   { "$ref": "#/definitions/tweet" },
+			"default": []
+		},
+		"required": ["pending", "approved"]
+	},
+
+	"additionaProperties": false	
+}

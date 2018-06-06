@@ -25,28 +25,28 @@ class RunRow {
 					onclick: () => {
 						nodecg.sendMessage("scheduleEdit", index);
 					}
-				}, m("img.icon", {src: "./edit-icon.svg"})),
+				}, m("img.icon", {src: "../img/edit-icon.svg"})),
 				// delete
 				m("button", {
 					class: "red",
 					onclick: () => {
 						nodecg.sendMessage("scheduleDelete", index);
 					}
-				}, m("img.icon", {src: "./delete-icon.svg"})),
+				}, m("img.icon", {src: "../img/delete-icon.svg"})),
 				// up
 				m("button", {
 					disabled: vnode.attrs.first,
 					onclick: () => {
 						nodecg.sendMessage("scheduleMoveBack", index);
 					}
-				}, m("img.icon", {src: "./arrow-up-icon.svg"})),
+				}, m("img.icon", {src: "../img/arrow-up-icon.svg"})),
 				// down
 				m("button", {
 					disabled: vnode.attrs.last,
 					onclick: () => {
 						nodecg.sendMessage("scheduleMoveForward", index);
 					}
-				}, m("img.icon", {src: "./arrow-down-icon.svg"})),
+				}, m("img.icon", {src: "../img/arrow-down-icon.svg"})),
 			])
 		]);
 	}
@@ -123,7 +123,4 @@ class ScheduleManager {
 
 m.mount(document.body, ScheduleManager);
 
-schedule.on("change", () => {
-	// update component on new data
-	m.redraw();
-});
+schedule.on("change", m.redraw);

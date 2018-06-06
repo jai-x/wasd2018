@@ -4,7 +4,7 @@ const extensions = [
 	"schedule",
 	"stopwatch",
 	//"justgiving", // <= Not working 😢
-	"twitter"
+	//"twitter"
 ];
 
 const nodecgApiContext = require("./util/nodecg-api-context");
