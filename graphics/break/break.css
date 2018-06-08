@@ -4,43 +4,95 @@
 	width: 1920px;
 	height: 1080px;
 	position: absolute;
-	z-index: -999;
 }
 
-#wasd-logo {
-	height: 300px;
-}
-
-#charity-logo {
-	height: 300px;
-}
-
-/* How can into CSS shape: https://css-tricks.com/examples/ShapesOfCSS/ */
-#top-triangle {
+.col {
 	position: absolute;
-	top: 0px; left: 0px;
-	width: 0px; height: 0px;
-	border-top: 350px solid var(--uwcs-light-grey);
-	border-right: 400px solid transparent;
-	z-index: -1;
+	height: 100%;
+	display: flex;
+	padding: 50px 0;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
-#bottom-triangle {
-	position: absolute;
-	right: 0px; bottom: 0px;
-	width: 0px; height: 0px;
-	border-bottom: 350px solid var(--uwcs-light-grey);
-	border-left: 400px solid transparent;
-	z-index: -1;
+#col-left {
+	left: 10%;
+	width: 500px;
+	z-index: 1;
 }
+
+#col-left > div {
+	background-color: var(--uwcs-light-grey);
+	width: 100%;
+	padding: 15px 50px;
+	margin-bottom: 10px;
+}
+
+#total {
+	font-size: 80px;
+	text-align: center;
+}
+
+#general {
+	flex: 1;
+}
+
+#wasd-logo, #charity-logo {
+	width: 100%;
+}
+
+
+#col-right {
+	width: 700px;
+	right: 15%;	
+	z-index: 1;
+}
+
+#cam {
+	width: 100%;
+	height: 400px;
+	background-color: green;
+}
+
+#schedule {
+	flex: 1;
+	margin-top: 20px;
+}
+
+#later {
+	flex: 1;
+}
+
+#next-title, #later-title {
+	font-size: 40px;
+}
+
+.run {
+	background-color: var(--uwcs-light-grey);
+	padding: 10px;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.run.first {
+	border: 3px solid var(--uwcs-yellow);
+}
+
+.run-game {
+	font-size: 30px;
+}
+
+.run-info {
+	font-size: 25px;
+}
+
 
 /* Background element stuff */
-.bg {
+.floaty {
 	position: absolute;
 	background-position: center;
 	background-size: cover;
 	width: 25px; height: 25px;
-	z-index: -1;
 }
 
 .cross {

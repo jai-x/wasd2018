@@ -8,10 +8,35 @@
   </head>
   <body>
     <div id="break">
-      <img src="../img/wasd-logo.svg" id="wasd-logo">
-      <img src="../img/se-logo-2.png" id="charity-logo">
-      <div id="top-triangle"></div>
-      <div id="bottom-triangle"></div>
+      <div class="col" id="col-left">
+        <div>
+          <object type="image/svg+xml" data="../img/wasd-logo.svg" id ="wasd-logo"></object>
+        </div>
+        <div>
+          <div class="shadow" id="total">£300</div>
+        </div>
+        <div>
+          <img src="../img/se-logo-2.png" id="charity-logo">
+        </div>
+        <div id="general">
+        </div>
+      </div>
+
+      <div class="col" id="col-right">
+        <div id="cam"></div>
+        <div id="schedule">
+          <div id="next">
+            <div id="next-title" class="shadow">Up Next:</div>
+            <div id="next-run"></div>
+            </div>
+          </div>
+          <div id="later">
+            <div id="later-title" class="shadow">Later:</div>
+            <div id="later-runs"></div>
+          </div>
+        </div>
+      </div>
+
       <div id="background-elements"></div>
     </div>
   </body>

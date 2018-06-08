@@ -102,7 +102,7 @@ const nextRuns = new class {
 			translateX: [
 				{value: 1500, duration: 0},
 				{value: 0, duration: 2000},
-				{value: -1500, duration: 2000, delay: 30000},
+				{value: -2000, duration: 2500, delay: 30000},
 			],
 			delay: (el, i) => { return 100 * (i + 1); },
 			easing: "easeOutCubic",
