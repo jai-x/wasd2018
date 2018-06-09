@@ -9,46 +9,23 @@
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
-				"appId": {
-					"type": "string",
-					"default": ""
-				},
-				"live": {
-					"type": "boolean",
-					"default": false
-				},
-				"pageShortName": {
-					"type": "string",
-					"default": ""
-				}
+				"appId":          { "type": "string"  },
+				"live":           { "type": "boolean" },
+				"pageShortName":  { "type": "string"  },
+				"updateInterval": { "type": "integer" }
 			},
-			"required": ["appId", "live"]
+			"required": ["appId", "live", "pageShortName", "updateInterval"]
 		},
 
 		"twitter": {
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
-				"consumerKey": {
-					"type": "string",
-					"default": ""
-				},
-				"consumerSecret": {
-					"type": "string",
-					"default": ""
-				},
-				"accessToken": {
-					"type": "string",
-					"default": ""
-				},
-				"accessTokenSecret": {
-					"type": "string",
-					"default": ""
-				},
-				"hashtag": {
-					"type": "string",
-					"default": ""
-				}
+				"consumerKey":       { "type": "string" },
+				"consumerSecret":    { "type": "string" },
+				"accessToken":       { "type": "string" },
+				"accessTokenSecret": { "type": "string" },
+				"hashtag":           { "type": "string" }
 			},
 			"required": [
 				"consumerKey",
