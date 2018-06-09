@@ -2,6 +2,20 @@
 
 // Replicant
 const schedule = nodecg.Replicant("schedule");
+const total = nodecg.Replicant("total");
+
+total.on("change", (newVal, oldVal) => {
+	document.getElementById("total-sym").textContent = newVal.symbol;
+
+	// Animate total incrementing
+	anime({
+		targets: "#total-num",
+		textContent: newVal.amount,
+		round: 1,
+		duration: 2500,
+		easing: "easeOutExpo"
+	});
+});
 
 // Generate the HTML element for the given run information
 const generateRun = (game, info, first) => {
@@ -39,6 +53,17 @@ const updateRuns = (runs, n) => {
 			later.append(generateRun(runs[index].game, info, false));
 		}
 	}
+
+	anime({
+		targets: ".run",
+		backgroundColor: [
+			{ value: "#3D53FF", duration: 300 }, // UWCS Dark Blue
+			{ value: "#2E3337", duration: 300 }, // UWCS Light Grey
+		],
+		easing: "linear",
+		delay: (el, i) => { return (i * 100) + 30000; }, // Evey 30s + flash down
+		loop: true
+	});
 };
 
 schedule.on("change", (newVal, oldVal) => {

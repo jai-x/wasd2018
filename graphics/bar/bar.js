@@ -1,14 +1,12 @@
 "use strict";
 
-// Elements
-const totalSym = document.getElementById("total-sym");
 
 // Replicant
 const total = nodecg.Replicant("total");
 const schedule = nodecg.Replicant("schedule");
 
 total.on("change", (newVal, oldVal) => {
-	totalSym.textContent = newVal.symbol;
+	document.getElementById("total-sym").textContent = newVal.symbol;
 
 	// Animate total incrementing
 	anime({

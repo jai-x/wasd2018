@@ -52,14 +52,12 @@
 	width: 100%;
 	height: 400px;
 	background-color: green;
-}
-
-#schedule {
-	flex: 1;
-	margin-top: 20px;
+	margin-bottom: 15px;
 }
 
 #later {
+	display: flex;
+	flex-direction: column;
 	flex: 1;
 }
 
@@ -67,11 +65,22 @@
 	font-size: 40px;
 }
 
+#later-runs {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 .run {
 	background-color: var(--uwcs-light-grey);
 	padding: 10px;
 	margin: 10px 0;
-	text-align: center;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
 }
 
 .run.first {
@@ -79,11 +88,12 @@
 }
 
 .run-game {
-	font-size: 30px;
+	font-size: 35px;
 }
 
 .run-info {
-	font-size: 25px;
+	font-size: 20px;
+	text-align: center;
 }
 
 
