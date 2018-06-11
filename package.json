@@ -15,7 +15,6 @@
 	"dependencies": {
 		"livesplit-core": "^0.9.0",
 		"request": "^2.87.0",
-		"request-promise-native": "^1.0.5",
 		"twit": "^2.2.10"
 	},
 	"nodecg": {
