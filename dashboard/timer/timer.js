@@ -1,62 +1,40 @@
 "use strict";
 
-let init = false;
+/* Replicants */
 const stopwatch = nodecg.Replicant("stopwatch");
 
-stopwatch.on("change", () => {
-	// mount component on replicant load
-	if (!init) {
-		m.mount(document.body, Timer);
-		init = true;
-	}
-	// update component on new data
-	m.redraw();
-});
-
-const start = () => nodecg.sendMessage("startStopwatch");
-const pause = () => nodecg.sendMessage("pauseStopwatch");
-const reset = () => nodecg.sendMessage("resetStopwatch");
-
-const displayColor = () => {
-	const state = stopwatch.value.displayState;
-
-	if (state == "running")
-		return "light-green";
-
-	if (state == "paused")
-		return "orange";
-
-	return "";
-};
-
-class Timer {
+class Stopwatch {
 	view() {
+		if (!stopwatch.value) {
+			return m(".level", m(".level-item", "Loading..."));
+		}
+
+		const time = stopwatch.value.time;
+		const state = stopwatch.value.displayState;
+
 		return [
-			// display
-			m("span", {
-				id: "timer-display",
-				class: displayColor()
-			}, stopwatch.value.time),
-			m("div",[
-				// start
-				m("button", {
-					class: "green",
-					onclick: start,
-					disabled: (stopwatch.value.displayState == "running")
-				}, "start"),
-				// pause
-				m("button", {
-					class: "orange",
-					onclick: pause,
-					disabled: (stopwatch.value.displayState != "running")
-				}, "pause"),
-				// reset
-				m("button", {
-					class: "red",
-					onclick: reset,
-					disabled: (stopwatch.value.displayState != "paused")
-				}, "reset")
+			m(".row", m("." + state + "#stopwatch-display", time)),
+			m(".row", [
+				m("button.button is-success stopwatch-button", {
+					onclick: this.start,
+					disabled: (state == "running")
+				}, "START"),
+				m("button.button is-warning stopwatch-button", {
+					onclick: this.pause,
+					disabled: (state != "running")
+				}, "PAUSE"),
+				m("button.button is-danger stopwatch-button", {
+					onclick: this.reset,
+					disabled: (state != "paused")
+				}, "RESET")
 			]),
 		];
 	};
+
+	start() { nodecg.sendMessage("startStopwatch"); };
+	pause() { nodecg.sendMessage("pauseStopwatch"); };
+	reset() { nodecg.sendMessage("resetStopwatch"); };
 };
+
+m.mount(document.body, Stopwatch);
+stopwatch.on("change", m.redraw);

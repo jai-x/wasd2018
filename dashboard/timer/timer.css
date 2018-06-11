@@ -1,16 +1,24 @@
-body {
+.row {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: center;
+	margin: 5px;
 }
 
-body > * {
-	margin: 5px 0;
+#stopwatch-display {
+	font-size: 70px;
+	line-height: 70px;
+	font-weight: bold;
 }
 
-#timer-display {
-	width: 9ch;
-	font-size: 50px;
-	text-align: center;
+#stopwatch-display.running {
+	background-color: lightgreen;
+}
+
+#stopwatch-display.paused {
+	background-color: yellow;
+}
+
+.stopwatch-button {
+	margin: 5px;
 }

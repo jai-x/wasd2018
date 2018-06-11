@@ -13,7 +13,10 @@
 		"url": "https://jai.moe"
 	},
 	"dependencies": {
+		"animejs": "^2.2.0",
+		"bulma": "^0.7.1",
 		"livesplit-core": "^0.9.0",
+		"mithril": "^1.1.6",
 		"request": "^2.87.0",
 		"twit": "^2.2.10"
 	},
@@ -24,25 +27,13 @@
 				"name": "timer",
 				"title": "Run Timer",
 				"file": "timer/timer.html",
-				"width": 2
-			},
-			{
-				"name": "twitter",
-				"title": "Twitter Feed",
-				"file": "twitter/twitter.html",
 				"width": 4
-			},
-			{
-				"name": "donations",
-				"title": "Donations",
-				"file": "donations/donations.html",
-				"width": 3
 			},
 			{
 				"name": "schedule",
 				"title": "Schedule",
 				"file": "schedule/schedule.html",
-				"width": 10
+				"fullbleed": true
 			},
 			{
 				"name": "edit",
