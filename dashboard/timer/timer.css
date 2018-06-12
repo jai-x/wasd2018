@@ -1,9 +1,4 @@
-.row {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 5px;
-}
+@import url("../wasd-dashboard.css");
 
 #stopwatch-display {
 	font-size: 70px;

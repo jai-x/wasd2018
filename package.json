@@ -27,7 +27,7 @@
 				"name": "timer",
 				"title": "Run Timer",
 				"file": "timer/timer.html",
-				"width": 4
+				"width": 3
 			},
 			{
 				"name": "schedule",

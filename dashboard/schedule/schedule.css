@@ -1,57 +1,37 @@
-/* Schedule table properties */
-table {
-	table-layout: fixed;
-	border-collapse: collapse;
-	border-spacing: 5px;
+@import url("../wasd-dashboard.css");
+
+button {
+	margin: 0 5px;
 }
 
 td {
-	text-overflow: ellipsis;
+	vertical-align: middle !important;
 }
 
-th {
-	text-align: left;
+table {
+	table-layout: fixed;
 }
 
-tr.current {
-	border: 2px solid red;
+#run-game {
+	width: 25%;
 }
 
-#horaro-input {
-	flex: 1;
-}
-
-/* Restrict columns by width percentage */
-.table-10 {
+#run-game-year {
 	width: 10%;
 }
 
-.table-15 {
-	width: 15%;
+#run-estimate {
+	width: 10%;
 }
 
-.table-20 {
+#run-category {
 	width: 20%;
 }
 
-/* Generic flexbox row */
-.row {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	/* background-color: white;
-	box-shadow: 0 0 4px #999; 
-	padding: 5px;*/
+#run-runners {
+	width: 20%;
 }
 
-.row > *{
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-td > button {
-	padding: 5px 16px;
+#run-controls {
+	width: 15%;
 }

@@ -1,0 +1,29 @@
+.wasd-row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 5px;
+}
+
+.wasd-icon {
+	width: 18px;
+	height: 18px;
+	background-size: contain;
+	background-position: center center;
+}
+
+.wasd-icon.edit {
+	background-image: url("./img/edit-icon.svg");
+}
+
+.wasd-icon.delete {
+	background-image: url("./img/delete-icon.svg");
+}
+
+.wasd-icon.arrow-up {
+	background-image: url("./img/arrow-up-icon.svg");
+}
+
+.wasd-icon.arrow-down {
+	background-image: url("./img/arrow-down-icon.svg");
+}

@@ -6,15 +6,15 @@ const stopwatch = nodecg.Replicant("stopwatch");
 class Stopwatch {
 	view() {
 		if (!stopwatch.value) {
-			return m(".level", m(".level-item", "Loading..."));
+			return m(".wasd-row", "Loading...");
 		}
 
 		const time = stopwatch.value.time;
 		const state = stopwatch.value.displayState;
 
 		return [
-			m(".row", m("." + state + "#stopwatch-display", time)),
-			m(".row", [
+			m(".wasd-row", m("." + state + "#stopwatch-display", time)),
+			m(".wasd-row", [
 				m("button.button is-success stopwatch-button", {
 					onclick: this.start,
 					disabled: (state == "running")

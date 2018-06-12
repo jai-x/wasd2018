@@ -25,6 +25,10 @@ const move = (index, delta) => {
 // Delete schedule entry at given index
 nodecg.listenFor("scheduleDelete", (index) => {
 	schedule.value.entries.splice(index, 1);
+	// Prevent current from being set to a run that doesnt exist
+	if (index == schedule.value.current && index != 0) {
+		schedule.value.current--;
+	}
 });
 
 // Set the edit index
