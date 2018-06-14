@@ -30,6 +30,12 @@
 				"width": 3
 			},
 			{
+				"name": "interview",
+				"title": "Panel member names",
+				"file": "interview/interview.html",
+				"width": 3
+			},
+			{
 				"name": "schedule",
 				"title": "Schedule",
 				"file": "schedule/schedule.html",
@@ -78,6 +84,11 @@
 				"file": "break/break.html",
 				"width": 1920,
 				"height": 1080
+			},
+			{
+				"file": "bottom-third/bottom-third.html",
+				"width": 1920,
+				"height": 200
 			}
 		]
 	}

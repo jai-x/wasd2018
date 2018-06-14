@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft-04/schema#",
+
+	"definitions": {
+		"person": {
+			"type": "object",
+			"properties": {
+				"name": { "type": "string", "default": "" },
+				"twitch": { "type": "string", "default": "" }
+			}
+		}
+	},
+
+	"type": "object",
+
+	"properties": {
+		"people": {
+			"type": "array",
+			"items": { "$ref": "#/definitions/person" },
+			"default": []
+		}
+	},
+
+	"required": ["people"]
+}
