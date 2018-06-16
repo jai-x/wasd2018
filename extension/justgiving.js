@@ -10,6 +10,7 @@ const donations = nodecg.Replicant("donations");
 /* Libraries */
 const request = require("request");
 const util    = require("util");
+const lodash  = require("lodash");
 
 let FAILED_REQUESTS = 0;
 
@@ -101,8 +102,9 @@ const fetchDonations = (context, interval) => {
 			nodecg.log.debug( util.inspect(err) );
 		} else {
 			nodecg.log.debug("Fetched JustGiving donations info");
-			// Pull copy of donations replicant to check against
-			let currentDonations = donations.value;
+			// Clone of donations replicant to check against
+			let currentDonations = lodash.cloneDeep(donations.value);
+
 			// Make array of incoming donations and update
 			const newDonations = Array.from(data.donations);
 			newDonations.forEach((d) => {

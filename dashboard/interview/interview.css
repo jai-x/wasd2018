@@ -1,5 +1,10 @@
 @import url("../wasd-dashboard.css");
 
-button {
-	margin: 0 5px;
+/* Override to keep form elements in line */
+.wasd-row.columns {
+	align-items: flex-end;
+}
+
+.button {
+	margin: 0 10px;
 }
