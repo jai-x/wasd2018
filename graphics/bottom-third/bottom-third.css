@@ -1,0 +1,14 @@
+#bottom-third-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: var(--uwcs-dark-grey);
+}
+
+.banner {
+	border: 3px solid var(--uwcs-light-grey);
+	padding: 15px;
+	margin: 5px;
+	flex-grow: 1;
+	text-align: center;
+}
