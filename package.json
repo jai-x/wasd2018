@@ -30,6 +30,12 @@
 				"width": 3
 			},
 			{
+				"name": "donations",
+				"title": "Donations",
+				"file": "donations/donations.html",
+				"width": 4
+			},
+			{
 				"name": "schedule",
 				"title": "Schedule",
 				"file": "schedule/schedule.html",

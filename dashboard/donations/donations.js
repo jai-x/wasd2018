@@ -1,20 +1,66 @@
 "use strict";
 
-const total = nodecg.Replicant("total");
+const total     = nodecg.Replicant("total");
+const donations = nodecg.Replicant("donations");
 
-class Donations {
+class TotalDisplay {
 	view() {
 		if (!total.value) {
-			return m("p", "Loading");
+			return m("p", "Loading...");
 		}
 
-		const totalStr = String(total.value.symbol + total.value.amount);
-		return m("#total", totalStr);
-	}
+		return m("#total-display", total.value.symbol + total.value.amount);
+	};
 };
 
-m.mount(document.body, Donations);
+class UnreadDonation {
+	view(vnode) {
+		return m(".donation box", [
+			m(".columns is-mobile", [
+				m(".donation-monies column is-2", [
+					m(".donation-currency-code", vnode.attrs.currencyCode),
+					m(".donation-amount", vnode.attrs.amount)
+				]),
+				m(".donation-content column", [
+					m(".donation-name", vnode.attrs.name),
+					m(".donation-message", vnode.attrs.message)
+				])
+			])
+		]);
+	};
+};
 
-total.on("change", () => {
-	m.redraw();
-});
+class UnreadDonations {
+	view() {
+		if (!donations.value) {
+			return m("p", "Loading...");
+		}
+		// Local copy
+		const allDonations = donations.value;
+		const unread = Object.values(allDonations).map((d) => {
+			if (!d.read) {
+				return m(UnreadDonation, d); /*{
+					amount: d.currencyCode + " " + d.amount,
+					name: d.name,
+					message: d.message
+				});*/
+			}
+		});
+		if (unread.length == 0) {
+			return m("p", {style: "text-align: center"}, "No unread donations.");
+		}
+		return m("#unread-donations", unread);
+	};
+};
+
+class App {
+	view() {
+		return [ m(TotalDisplay), m(UnreadDonations) ];
+	};
+};
+
+m.mount(document.body, App);
+
+total.on("change", m.redraw);
+donations.on("change", m.redraw);
+

@@ -79,7 +79,7 @@ const deviation = (min, max) => randInt(min, max) * plusOrMinus();
 
 // Generate random background elements, add them to the document and return
 // an array of the elements
-const generateBG = () => {
+const generateBG = (parentId) => {
 	const bgClasses = ["cross", "rectangle", "oval", "triangle", "dot"];
 
 	const maxWidth = 1920;
@@ -106,7 +106,7 @@ const generateBG = () => {
 		}
 	}
 
-	document.getElementById("background-elements").appendChild(frag);
+	document.getElementById(parentId).appendChild(frag);
 	return elementArr;
 };
 
@@ -127,4 +127,4 @@ const animateBG = (element) => {
 };
 
 // Run the generate function and then apply the animation for each element
-generateBG().forEach(animateBG);
+generateBG("floaties").forEach(animateBG);
