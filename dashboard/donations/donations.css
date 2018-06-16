@@ -1,9 +1,45 @@
-body {
+@import url("../wasd-dashboard.css");
+
+#total-display {
+	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+#unread-donations {
+	display: flex;
+	flex-direction: column;
+	max-height: 450px;
+	overflow-y: auto;
+}
+
+.donation {
+	margin: 5px !important;
+	padding: 10px;
+}
+
+.donation-monies {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 }
 
-#total {
-	font-size: 50px;
+.donation-currency-code {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.donation-amount {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.donation-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.donation-name {
+	font-weight: bold;
 }

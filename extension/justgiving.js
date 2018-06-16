@@ -112,9 +112,9 @@ const fetchDonations = (context, interval) => {
 				}
 				// Add donation object using key of donation id
 				currentDonations[d.id] = {
-					id:           d.id,
-					currencyCode: d.currentDonations,
-					amount:       d.amount,
+					key:          d.id,
+					currencyCode: d.donorLocalCurrencyCode,
+					amount:       Number(d.donorLocalAmount).toFixed(2),
 					name:         d.donorDisplayName,
 					message:      d.message,
 					read:         false
