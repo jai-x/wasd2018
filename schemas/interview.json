@@ -7,19 +7,12 @@
 			"properties": {
 				"name": { "type": "string", "default": "" },
 				"twitch": { "type": "string", "default": "" }
-			}
+			},
+			"required": ["name"]
 		}
 	},
 
-	"type": "object",
-
-	"properties": {
-		"people": {
-			"type": "array",
-			"items": { "$ref": "#/definitions/person" },
-			"default": []
-		}
-	},
-
-	"required": ["people"]
+	"type": "array",
+	"items": { "$ref": "#/definitions/person" },
+	"default": []
 }

@@ -6,8 +6,7 @@ interview.on("change", (newVal, oldVal) => {
 	const container = document.getElementById('bottom-third-container');
 	container.innerHTML = null;
 
-	const people = newVal.people.filter(person => person.name !== '');
-	for(const person of people) {
+	for(const person of newVal) {
 		const banner = document.createElement('div');
 		banner.classList.add('banner');
 		banner.appendChild(document.createTextNode(person.name));

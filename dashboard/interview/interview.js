@@ -2,21 +2,36 @@
 
 const interview = nodecg.Replicant("interview");
 
+let localCopy = new Array();
+let modified  = new Boolean();
+
+
+/* For some weird reason, using `m.withAttr` only works if the function
+ * is the only statement in the `oninput` callback.
+ * This means:
+ *    oninput: () => {
+ *        m.withAttr("value", callback);
+ *        someOtherStatements;
+ *    },
+ * does not work, even when not using an arrow function. Therefore state change
+ * logic has been moved to these functions.
+ */
+
+const setName   = (v, i) => { localCopy[i].name   = v; modified = true; }
+const setTwitch = (v, i) => { localCopy[i].twitch = v; modified = true; }
+
 class InterviewPerson {
 	view(vnode) {
-		const person = vnode.attrs.person;
-		const remove = vnode.attrs.removeCallback;
-		const change = vnode.attrs.changeCallback;
+		const i = vnode.attrs.index;
+
 		return m(".wasd-row columns is-mobile", [
 			m(".column", [
 				m("label.label", "Name"),
 				m(".control", [
 					m("input.input[type=text]", {
-						value: person.name,
-						oninput: () => {
-							m.withAttr("value", (val) => person.name = val);
-							change();
-						}
+						required: true,
+						value: localCopy[i].name,
+						oninput: m.withAttr("value", (v) => setName(v, i))
 					})
 				]),
 			]),
@@ -24,65 +39,55 @@ class InterviewPerson {
 				m("label.label", "Twitch"),
 				m(".control", [
 					m("input.input[type=text]", {
-						value: person.twitch,
-						oninput: () => {
-							m.withAttr("value", (val) => person.twitch = val);
-							change();
-						},
+						value: localCopy[i].twitch,
+						oninput: m.withAttr("value", (v) => setTwitch(v, i))
 					})
 				])
 			]),
 			m(".column is-narrow",
-				m("button.button", {onclick: remove} ,"Remove")
+				m("button.button", {
+					onclick: () => {
+						localCopy.splice(i, 1);
+						modified = true;
+					}
+				} ,"Remove")
 			)
 		]);
 	};
 };
 
 class InterviewApp {
-	oninit() {
-		interview.on("change", () => {
-			this.currentPeople = _.cloneDeep(interview.value.people);
-			this.modified = false;
-			m.redraw();
-		});
-	};
-
 	view() {
 		if (!interview.value) {
 			return m(".wasd-row", "Loading...");
 		}
 
-		this.modified ? m("p", "Unsaved Changes") : null;
-
 		return [
-			...this.currentPeople.map((person, index) => m(InterviewPerson, {
-				person: person,
-				// callback will remove person from array at its index
-				removeCallback: () => {
-					this.currentPeople.splice(index, 1);
-					this.modified = true;
-				},
-				changeCallback: () => { this.modified = true; }
-			})),
+			// Names input
+			...localCopy.map((person, index) => m(InterviewPerson, {index: index})),
+
+			// Bottom row control
 			m(".wasd-row", [
 				// Add empty object for new person
 				m("button.button", {
-					onclick: () => {
-						this.currentPeople.push({});
-					}
+					onclick: () => localCopy.push(new Object())
 				} ,"Add person"),
+
 				// Clone current state and assign to replicant
 				m("button.button", {
-					onclick: () => {
-						interview.value.people = _.cloneDeep(this.currentPeople);
-						this.modified = false;;
-					}
+					onclick: () => interview.value = _.cloneDeep(localCopy)
 				} ,"Apply"),
-				this.modified ? m("p", "Unsaved Changes") : null
+
+				// Indicate any unsaved changes
+				modified ? m("p", "Unsaved Changes") : null
 			]),
 		];
 	};
 };
 
 m.mount(document.body, InterviewApp);
+interview.on("change", (newVal, oldVal) => {
+	localCopy = _.cloneDeep(newVal);
+	modified = false;
+	m.redraw();
+});
