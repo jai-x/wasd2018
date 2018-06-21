@@ -3,6 +3,8 @@
 const extensions = [
 	"schedule",
 	"stopwatch",
+	//"nowplaying",
+	"countdown",
 	//"justgiving",
 	//"twitter"
 ];

@@ -34,9 +34,14 @@
 				"accessTokenSecret",
 				"hashtag"
 			]
+		},
+
+		"nowPlayingFile": {
+			"type": "string",
+			"default": ""
 		}
 
 	},
 
-	"required": ["justgiving", "twitter"]
+	"required": ["justgiving", "twitter", "nowPlayingFile"]
 }

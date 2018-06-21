@@ -4,7 +4,25 @@ A bundle of broadcast graphics for
 [Warwick's Awesome Speedruns & Demos](https://uwcs.co.uk/events/wasd-2018) to
 be used with [nodecg](https://nodecg.com).
 
-### Currently in development
+## Currently in development
+
+### Todo
+
+* [ ] Now playing
+  * [ ] Extension
+  * [x] Replicant
+  * [ ] Dashboard panel
+* [ ] Countdown
+  * [x] Extension
+  * [ ] Replicant
+  * [ ] Dashboard panel
+* [ ] Game overlays:
+  * [ ] Add sponsor rotation
+* [ ] Break screen overlay:
+  * [ ] Add now playing to overlay space
+  * [ ] Add countdown to overlay space
+
+## Libraries
 
 This bundle is built on the [nodecg](https://nodecg.com) broadcast graphics
 framework, under the MIT license.

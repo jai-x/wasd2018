@@ -10,5 +10,6 @@
 		"accessToken": "",
 		"accessTokenSecret": "",
 		"hashtag": ""
-	}
+	},
+	"nowPlayingFile": "/path/to/foobar/output.txt"
 }

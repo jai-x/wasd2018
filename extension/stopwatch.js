@@ -8,6 +8,7 @@ const stopwatchRep = nodecg.Replicant("stopwatch");
 
 /* Libraries */
 const lsCore = require("livesplit-core");
+const timeUtils = require("./util/time");
 
 // livesplit-core library constants
 const LS_STOPWATCH_PHASE = {
@@ -18,27 +19,10 @@ const LS_STOPWATCH_PHASE = {
 };
 
 /* Functions */
-// zero-pad a string to max 2 characters
-const padInt = (num) => {
-	let str = num.toString();
-	while(str.length < 2) {
-		str = '0' + str;
-	}
-	return str;
-};
-
-// convert seconds (integer) to a time string
-const secondsToTimeString = (seconds) => {
-	const secs = padInt( Math.floor(seconds % 60)          );
-	const mins = padInt( Math.floor((seconds / 60) % 60)   );
-	const hour = padInt( Math.floor((seconds / 3600) % 24) );
-	return hour + ":" + mins + ":" + secs;
-};
-
 // push stopwatch updates to replicant stopwatchRep
 const update = () => {
 	const seconds = stopwatch.currentTime().gameTime().totalSeconds();
-	stopwatchRep.value.time = secondsToTimeString(seconds);
+	stopwatchRep.value.time = timeUtils.msToTimeString(seconds * 1000);
 };
 
 // schedule updates to display

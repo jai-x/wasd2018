@@ -27,8 +27,7 @@ class InterviewPerson {
 		return m(".wasd-row columns is-mobile", [
 			m(".column", [
 				m("label.label", "Name"),
-				m(".control", [
-					m("input.input[type=text]", {
+				m(".control", [ m("input.input[type=text]", {
 						required: true,
 						value: localCopy[i].name,
 						oninput: m.withAttr("value", (v) => setName(v, i))
@@ -68,6 +67,14 @@ class InterviewApp {
 
 			// Bottom row control
 			m(".wasd-row", [
+				m("button.button", {
+					onclick: () => nodecg.sendMessage("bottom-third-show")
+				} ,"Show"),
+
+				m("button.button", {
+					onclick: () => nodecg.sendMessage("bottom-third-hide")
+				} ,"Hide"),
+
 				// Add empty object for new person
 				m("button.button", {
 					onclick: () => localCopy.push(new Object())
@@ -75,8 +82,8 @@ class InterviewApp {
 
 				// Clone current state and assign to replicant
 				m("button.button", {
-					onclick: () => interview.value = _.cloneDeep(localCopy)
-				} ,"Apply"),
+					onclick: () => interview.value = clone(localCopy)
+				} ,"Save"),
 
 				// Indicate any unsaved changes
 				modified ? m("p", "Unsaved Changes") : null
@@ -87,7 +94,7 @@ class InterviewApp {
 
 m.mount(document.body, InterviewApp);
 interview.on("change", (newVal, oldVal) => {
-	localCopy = _.cloneDeep(newVal);
+	localCopy = clone(newVal);
 	modified = false;
 	m.redraw();
 });
