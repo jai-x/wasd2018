@@ -3,17 +3,18 @@
 
 	"type": "object",
 
+	"additionalProperties": false,
+
 	"properties": {
+		"running": {
+			"type": "boolean",
+			"default": false
+		},
 		"time": {
 			"type": "string",
 			"default": ""
-		},
-		"displayState": {
-			"type": "string",
-			"default": "reset",
-			"enum": ["reset", "running", "paused"]
 		}
 	},
 
-	"required": ["time", "displayState"]
+	"required": ["time", "running"]
 }

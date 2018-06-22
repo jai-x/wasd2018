@@ -12,10 +12,10 @@ be used with [nodecg](https://nodecg.com).
   * [ ] Extension
   * [x] Replicant
   * [ ] Dashboard panel
-* [ ] Countdown
+* [x] Countdown
   * [x] Extension
-  * [ ] Replicant
-  * [ ] Dashboard panel
+  * [x] Replicant
+  * [x] Dashboard panel
 * [ ] Game overlays:
   * [ ] Add sponsor rotation
 * [ ] Break screen overlay:

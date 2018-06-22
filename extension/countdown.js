@@ -9,26 +9,38 @@ const countdown = nodecg.Replicant("countdown");
 /* Libraries */
 const timeUtils = require("./util/time");
 
-let countdownInstance;
+let instance;
 
 /* Functions */
+// Start the countdown of duration given by the timestring
 const start = (timeString) => {
-	if (countdownInstance) {
-		countdownInstance.stop();
-		countdownInstance.removeAllListeners();
+	if (countdown.value.running) {
+		return;
 	}
 
+	if (instance) {
+		instance.stop();
+		instance.removeAllListeners();
+	}
+
+	countdown.value.running = true;
+
 	const ms = timeUtils.timeStringtoMs(timeString);
-	countdownInstance = new timeUtils.CountdownTimer(ms);
-	countdownInstance.on("tick", (ms) => {
-		nodecg.log.debug("Tick:", timeUtils.msToTimeString(ms));
-	});
-	countdownInstance.on("done", () => nodecg.log.debug("Done"));
+	instance = new timeUtils.CountdownTimer(ms);
+
+	instance.on("tick", (ms) => countdown.value.time = timeUtils.msToTimeString(ms));
+	instance.on("done", () => countdown.value.running = false);
 };
 
 const stop = () => {
-	if (countdownInstance) {
-		countdownInstance.stop();
+	if (!countdown.value.running) {
+		return;
+	};
+
+	countdown.value.running = false;
+
+	if (instance) {
+		instance.stop();
 	}
 };
 

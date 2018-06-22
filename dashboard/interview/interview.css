@@ -1,8 +1,8 @@
 @import url("../wasd-dashboard.css");
 
-/* Override to keep form elements in line */
 .wasd-row.columns {
-	align-items: flex-end;
+	align-items: flex-end; /* keep form elements in line */
+	margin: 0;
 }
 
 .button {
