@@ -1,6 +1,66 @@
 @import url("../wasd-dashboard.css");
 
 #donation-total {
-	font-size: 35px;
+	font-size: 45px;
 	font-weight: bold;
+}
+
+#run-game {
+	font-size: 40px;
+}
+
+#run-category {
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#run-runners {
+	font-size: 30px;
+}
+
+
+#run-timer {
+	font-size: 45px;	
+	line-height: 35px;
+}
+
+hr {
+	border: 1px solid black;
+	margin: 0;
+}
+
+.donation {
+	margin: 5px !important;
+	padding: 10px;
+}
+
+.donation-monies {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.donation-currency-code {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.donation-amount {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.donation-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.donation-name {
+	font-weight: bold;
+}
+
+.donation-control {
+	padding: 10px;
 }

@@ -1,0 +1,64 @@
+#start {
+	background-color: var(--uwcs-dark-grey);
+	overflow: hidden;
+	width: 1920px;
+	height: 1080px;
+	position: absolute;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#wasd-logo {
+	width: 600px;
+	margin: 20px;
+}
+
+#countdown {
+	font-size: 100px;
+	font-weight: bold;
+}
+
+#np {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 1000px;
+	margin-left: -500px;
+
+	background-color: var(--uwcs-light-grey);
+	padding: 10px;
+	font-size: 30px;
+	border-radius: 5px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+/* Background element stuff */
+.floaty {
+	position: absolute;
+	background-position: center;
+	background-size: cover;
+	width: 25px; height: 25px;
+}
+
+.cross {
+	background-image: url("../img/cross-bg.svg");
+}
+.rectangle {
+	background-image: url("../img/rectangle-bg.svg");
+}
+.oval {
+	background-image: url("../img/oval-bg.svg");
+}
+
+.dot {
+	background-image: url("../img/dot-bg.svg");
+}
+.triangle {
+	background-image: url("../img/triangle-bg.svg");
+}

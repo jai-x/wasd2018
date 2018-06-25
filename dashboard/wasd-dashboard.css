@@ -42,3 +42,7 @@
 .wasd-icon.arrow-down {
 	background-image: url("./img/arrow-down-icon.svg");
 }
+
+.wasd-icon.tick {
+	background-image: url("./img/tick-icon.svg");
+}

@@ -35,20 +35,16 @@ class UnreadDonations {
 		if (!donations.value) {
 			return m("p", "Loading...");
 		}
-		// Local copy
-		const allDonations = donations.value;
-		const unread = Object.values(allDonations).map((d) => {
+
+		const unread = Object.values(donations.value).map((d) => {
 			if (!d.read) {
-				return m(UnreadDonation, d); /*{
-					amount: d.currencyCode + " " + d.amount,
-					name: d.name,
-					message: d.message
-				});*/
-			}
+				return m(UnreadDonation, d);
 		});
+
 		if (unread.length == 0) {
 			return m("p", {style: "text-align: center"}, "No unread donations.");
 		}
+
 		return m("#unread-donations", unread);
 	};
 };

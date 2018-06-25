@@ -113,6 +113,11 @@
 				"height": 1080
 			},
 			{
+				"file": "start/start.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
 				"file": "bottom-third/bottom-third.html",
 				"width": 1920,
 				"height": 200

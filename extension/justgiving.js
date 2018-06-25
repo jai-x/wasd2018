@@ -144,6 +144,13 @@ const init = () => {
 	// Kick off the process
 	fetchTotal(context, conf.updateInterval);
 	fetchDonations(context, conf.updateInterval);
+
+	nodecg.listenFor("donationRead", (id) => {
+		if (donations.value[id]) {
+			nodecg.log.debug("Marking donation as read, ID:", id);
+			donations.value[id].read = true;
+		}
+	});
 };
 
 init();

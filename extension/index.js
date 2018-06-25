@@ -5,7 +5,7 @@ const extensions = [
 	"stopwatch",
 	"nowplaying",
 	"countdown",
-	//"justgiving",
+	"justgiving",
 	//"twitter"
 ];
 
