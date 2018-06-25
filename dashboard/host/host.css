@@ -1,0 +1,6 @@
+@import url("../wasd-dashboard.css");
+
+#donation-total {
+	font-size: 35px;
+	font-weight: bold;
+}

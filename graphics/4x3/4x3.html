@@ -3,8 +3,9 @@
   <head>
     <link rel="stylesheet" href="../graphics-base.css">
     <link rel="stylesheet" href="./4x3.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js" defer></script>
+    <script src="../../node_modules/animejs/anime.js" defer></script>
     <script src="../general.js" defer></script>
+    <script src="./4x3.js" defer></script>
   </head>
   <body>
     <div id="layout">
@@ -23,7 +24,7 @@
           </div>
 
           <div class="row-space-even">
-            <img src="../img/timer-icon.svg" id="timer-icon">
+            <div class="icon timer"></div>
             <div id="run-estimate">&lt;run-estimate&gt;</div>
           </div>
 
@@ -38,6 +39,14 @@
 
       <div id="sponsors" class="panel">
         <div class="inset-border"></div>
+        <div id="sponsor-group-1">
+          <img src="../img/overclockers-logo.png">
+          <img src="../img/roccat-logo.png">
+        </div>
+        <div id="sponsor-group-2">
+          <img src="../img/rog-logo.png">
+          <img src="../img/noblechair-logo.png">
+        </div>
       </div>
 
       <div id="game"></div>

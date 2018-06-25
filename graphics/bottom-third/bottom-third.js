@@ -3,9 +3,9 @@
 const interview = nodecg.Replicant("interview");
 
 const makeTwitchIcon = () => {
-	const icon = document.createElement("img");
-	icon.setAttribute("src", "../img/twitch-icon.svg");
-	icon.classList.add("twitch-icon");
+	const icon = document.createElement("div");
+	icon.classList.add("icon");
+	icon.classList.add("twitch");
 	return icon;
 };
 

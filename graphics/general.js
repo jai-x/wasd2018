@@ -36,8 +36,12 @@ const flashTimer = () => {
 		// See graphics-base.css for color definitions
 		targets: "#timer",
 		backgroundColor: [
-			{value: "#3d53ff"}, // UWCS Blue
-			{value: "#fdd835"}  // UWCS Yellow
+			{value: "#3D53FF"}, // UWCS Blue
+			{value: "#E4E8FF"}  // UWCS White Blue
+		],
+		color: [
+			{value: "#FFFFFF"},
+			{value: "#000000"}
 		],
 		direction: "alternate",
 		duration: 1000,

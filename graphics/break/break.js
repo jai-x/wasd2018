@@ -1,9 +1,11 @@
 "use strict";
 
-// Replicant
-const schedule = nodecg.Replicant("schedule");
-const total = nodecg.Replicant("total");
+// Replicants
+const schedule   = nodecg.Replicant("schedule");
+const total      = nodecg.Replicant("total");
+const nowplaying = nodecg.Replicant("nowplaying");
 
+// Update the donation total
 total.on("change", (newVal, oldVal) => {
 	document.getElementById("total-sym").textContent = newVal.symbol;
 
@@ -15,6 +17,12 @@ total.on("change", (newVal, oldVal) => {
 		duration: 2500,
 		easing: "easeOutExpo"
 	});
+});
+
+// Update the nowplaying text
+nowplaying.on("change", (newVal, oldVal) => {
+	const npText = document.getElementById("np-text");
+	npText.textContent = newVal;
 });
 
 // Generate the HTML element for the given run information
@@ -55,7 +63,7 @@ const updateRuns = (runs, n) => {
 	}
 
 	anime({
-		targets: ".run",
+		targets: ["#np", ".run"],
 		backgroundColor: [
 			{ value: "#3D53FF", duration: 300 }, // UWCS Dark Blue
 			{ value: "#2E3337", duration: 300 }, // UWCS Light Grey
@@ -128,3 +136,35 @@ const animateBG = (element) => {
 
 // Run the generate function and then apply the animation for each element
 generateBG("floaties").forEach(animateBG);
+
+// How long each sponsor group should show
+const SPONSOR_SHOW = 30000;
+
+// Animate the sponsors
+anime.timeline({loop: true})
+	.add({
+		targets: "#sponsor-group-1",
+		opacity: [0, 1],
+		duration: 500,
+		easing: "linear"
+	})
+	.add({
+		delay: SPONSOR_SHOW,
+		targets: "#sponsor-group-1",
+		opacity: [1, 0],
+		duration: 500,
+		easing: "linear"
+	})
+	.add({
+		targets: "#sponsor-group-2",
+		opacity: [0, 1],
+		duration: 500,
+		easing: "linear"
+	})
+	.add({
+		delay: SPONSOR_SHOW,
+		targets: "#sponsor-group-2",
+		opacity: [1, 0],
+		duration: 500,
+		easing: "linear"
+	});

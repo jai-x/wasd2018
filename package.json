@@ -33,6 +33,12 @@
 				"width": 3
 			},
 			{
+				"name": "nowplaying",
+				"title": "Now Playing",
+				"file": "nowplaying/nowplaying.html",
+				"width": 3
+			},
+			{
 				"name": "interview",
 				"title": "Interview Panel",
 				"file": "interview/interview.html",
@@ -54,6 +60,12 @@
 				"name": "schedule",
 				"title": "Schedule",
 				"file": "schedule/schedule.html",
+				"fullbleed": true
+			},
+			{
+				"name": "host",
+				"title": "Host Panel",
+				"file": "host/host.html",
 				"fullbleed": true
 			},
 			{

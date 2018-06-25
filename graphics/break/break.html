@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" href="../graphics-base.css">
     <link rel="stylesheet" href="./break.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js" defer></script>
+    <script src="../../node_modules/animejs/anime.js" defer></script>
     <script src="./break.js" defer></script>
   </head>
   <body>
@@ -20,21 +20,29 @@
         <div>
           <img src="../img/se-logo-2.png" id="charity-logo">
         </div>
-        <div id="general">
+        <div id="sponsors">
+          <div id="sponsor-group-1">
+            <img src="../img/overclockers-logo.png">
+            <img src="../img/roccat-logo.png">
+          </div>
+          <div id="sponsor-group-2">
+            <img src="../img/rog-logo.png">
+            <img src="../img/noblechair-logo.png">
+          </div>
         </div>
       </div>
 
       <div class="col" id="col-right">
-        <div id="cam"></div>
-          <div id="next">
-            <div id="next-title" class="shadow">Up Next:</div>
-            <div id="next-run"></div>
-          </div>
-          <div id="later">
-            <div id="later-title" class="shadow">Later:</div>
-            <div id="later-runs"></div>
-          </div>
+        <div id="np" class="shadow">
+          <div class="icon note"></div>
+          <div id="np-text"></div>
+          <div class="icon note"></div>
         </div>
+        <div id="cam"></div>
+        <div class="label  shadow">Up Next</div>
+        <div id="next-run"></div>
+        <div class="label shadow">Later</div>
+        <div id="later-runs"></div>
       </div>
 
       <div id="floaties"></div>

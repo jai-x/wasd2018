@@ -20,6 +20,7 @@
 	max-width: 300px;
 	min-height: 70px;
 	font-size: 30px;
+	border-radius: 5px;
 }
 
 .twitch {
@@ -29,8 +30,7 @@
 	font-size: 20px;
 }
 
-.twitch-icon {
-	height: 15px;
-	width: 15px;
-	margin-right: 5px;
+.twitch.icon {
+	height: 20px;
+	width: 20px;
 }

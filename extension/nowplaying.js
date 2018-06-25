@@ -17,19 +17,19 @@ const die = (msg) => {
 const watch = (file) => {
 	nodecg.log.info("nowplaying extension watching file:", file);
 
-	fs.watch(file, (evt, filename) => {
-		if (evt == "change") {
-			// Read file contents
-			const val = fs.readFileSync(file, "utf8");
-			nodecg.log.debug("nowplaying file contents changed:", file);
-			nodecg.log.debug("nowplaying contents:", val);
-			// Assign file contents to replicant
-			nowplaying.value = val;
-		}
+	const watcher = fs.watch(file);
 
-		if (evt == "error") {
-			nodecg.log.error("Unexpected error when watching nowplaying file:", evt);
-		}
+	watcher.on("change", () => {
+		// Read file contents
+		const val = fs.readFileSync(file, "utf8");
+		nodecg.log.debug("nowplaying file contents changed:", file);
+		nodecg.log.debug("nowplaying contents:", val);
+		// Assign file contents to replicant
+		nowplaying.value = val.trim();
+	});
+
+	watcher.on("error", () => {
+		nodecg.log.error("Unexpected error when watching nowplaying file:", evt);
 	});
 };
 

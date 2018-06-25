@@ -3,7 +3,7 @@
 const extensions = [
 	"schedule",
 	"stopwatch",
-	//"nowplaying",
+	"nowplaying",
 	"countdown",
 	//"justgiving",
 	//"twitter"

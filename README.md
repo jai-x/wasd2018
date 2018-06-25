@@ -6,22 +6,6 @@ be used with [nodecg](https://nodecg.com).
 
 ## Currently in development
 
-### Todo
-
-* [ ] Now playing
-  * [ ] Extension
-  * [x] Replicant
-  * [ ] Dashboard panel
-* [x] Countdown
-  * [x] Extension
-  * [x] Replicant
-  * [x] Dashboard panel
-* [ ] Game overlays:
-  * [ ] Add sponsor rotation
-* [ ] Break screen overlay:
-  * [ ] Add now playing to overlay space
-  * [ ] Add countdown to overlay space
-
 ## Libraries
 
 This bundle is built on the [nodecg](https://nodecg.com) broadcast graphics

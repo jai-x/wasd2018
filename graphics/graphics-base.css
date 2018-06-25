@@ -30,6 +30,7 @@ body {
 	top: 0; bottom: 0; left: 0; right: 0;
 	border: 3px solid var(--uwcs-light-grey);
 	margin: 5px;
+	border-radius: 5px;
 }
 
 .shadow {
@@ -52,8 +53,22 @@ body {
 	overflow: hidden;
 }
 
-#timer-icon {
+.icon {
 	height: 25px;
 	width: 25px;
-	margin-right: 10px;
+	margin: 0 5px;
+	background-size: contain;
+	background-position: center center;
+}
+
+.icon.timer {
+	background-image: url("./img/timer-icon.svg");
+}
+
+.icon.note {
+	background-image: url("./img/note-icon.svg");
+}
+
+.icon.twitch {
+	background-image: url("./img/twitch-icon.svg");
 }
