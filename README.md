@@ -4,7 +4,11 @@ A bundle of broadcast graphics for
 [Warwick's Awesome Speedruns & Demos](https://uwcs.co.uk/events/wasd-2018) to
 be used with [nodecg](https://nodecg.com).
 
-## Currently in development
+## Usage
+This bundle was used for broadcast graphics at the Warwick's Awesome Speedruns
+& Demos 2018 event, which was joint hosted by the University of Warwick
+Computing Society and the Warwick Esports Society. Usage of these graphics
+can be found in videos of the event in [this YouTube playlist](https://www.youtube.com/watch?v=hvA_k-yNEFQ&list=PL0cMFmWyMFGIUxjyapjmP9Wa_i5l1lOlS).
 
 ## Libraries
 
